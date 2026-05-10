@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bungee", sans-serif;
+}
+:root {
+    --cor-fundo: #ffffff;
+    --cor-texto: #000;
+    --p-20: 20px;
+    --fs: 16px;
+    --linear-gdt: linear-gradient(135deg, #00c6ff, #00d084);
+}
+.conteudo-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e2ebf7 0%,
+            #f0f7f5 50%,
+            #a1f2c4 100%);
+    margin: var(--p-20);
+    border-radius: 18px;
+    padding: var(--p-20);
+}
+.apresentacao,.imagem-apresentacao{
+    padding: var(--p-20);
+    max-width: 80%;
+}
+.tag {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    font-size: var(--fs);
+    border-radius: 18px;
+    width: fit-content;
+    margin: 20px 0;
+    text-align: start;
+}
+.apresentacao h1{
+    font-size: clamp(40px,50px,60px);
+}
+.mudar-cor {
+    background: var(--linear-gdt);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.apresentacao .acoes-usuario .btn-login{
+    background: var(--cor-fundo);
+}
+.apresentacao p{
+    font-size: clamp(16px, 18px, 20px);
+    color: #363636;
+    text-wrap: balance;
+    line-height: 26px;
+    margin: 20px 0;
+}
+.imagem-apresentacao img{
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+@media (max-width: 768px) {
+    .conteudo-principal {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .apresentacao, .imagem-apresentacao {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bungee", sans-serif;
+}
+:root{
+    --cor-fundo: #ffffff;
+    --cor-texto: #000;
+    --p-20: 20px;
+    --fs:16px;
+    --linear-gdt:linear-gradient(135deg, #00c6ff,#00d084);
+}
+.rodape{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: left;
+    gap: 20px;
+    background-color: var(--cor-fundo);
+    padding: var(--p-20);
+    max-width: 100%;
+    border-top: 1px solid #dcdcdc;
+}
+.rodape .logo{
+    display: flex;
+    align-items: start;
+}
+.rodape .menu-navegacao ul{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+}
+h4{
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+.redes-sociais .fa-brands{
+    display: inline-block;
+    padding: 12px;
+    color: var(--cor-texto);
+    font-size: 15px;
+    opacity: 0.8;
+    transition: .3s ease;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.redes-sociais p{
+    padding: 25px 0px;
+    opacity: 0.5;
+}
+.rodape-direitos{
+    width: 100%;
+    border-top: 1px solid #dcdcdc;
+    padding: var(--p-20);
+    grid-column: 1/span 3;
+    text-align: center;
+}
+/*  */
+.redes-sociais .fa-brands.fa-instagram:hover{
+    transition: .3s ease;
+    background: linear-gradient(
+    135deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5);
+}
+.redes-sociais .fa-brands.fa-facebook:hover{
+    transition: .3s ease;
+     background: linear-gradient(
+    135deg,
+    #1877f2,
+    #0a58ca);
+}
+.redes-sociais .fa-brands.fa-whatsapp:hover{
+    transition: .3s ease;
+    background: linear-gradient(
+    135deg,
+    #25d366,
+    #128c7e
+  );
+}
+.rodape .menu-navegacao a:hover{
+    color:#00c6ff;
+    background-color: transparent;
+    padding: 0;
+}
+
+@media(max-width: 768px){
+    .rodape{
+        grid-template-columns: 1fr;
+    }
+    .rodape .rodape-direitos{
+        grid-column: 1;
+        grid-row: 5;
+    }
+}
