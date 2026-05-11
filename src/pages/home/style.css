@@ -1,16 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Bungee", sans-serif;
-}
-:root {
-    --cor-fundo: #ffffff;
-    --cor-texto: #000;
-    --p-20: 20px;
-    --fs: 16px;
-    --linear-gdt: linear-gradient(135deg, #00c6ff, #00d084);
-}
 .conteudo-principal {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -67,7 +54,7 @@
 @media (max-width: 768px) {
     .conteudo-principal {
         grid-template-columns: 1fr;
-        height: auto;
+        margin: 0 auto;
     }
     .apresentacao, .imagem-apresentacao {
         max-width: 100%;

@@ -20,8 +20,8 @@ function Header() {
         </ul>
       </nav>
       <div className="acoes-usuario">
-        <button className="btn-login" type="button"><span className="material-symbols-outlined">login</span>Entrar</button>
-        <button className="btn-adotar" type="button"><span className="material-symbols-outlined">favorite</span>Adote-me</button>
+        <button className="btn-login" ><span className="material-symbols-outlined">login</span>Entrar</button>
+        <button className="btn-adotar" ><span className="material-symbols-outlined">favorite</span>Adote-me</button>
       </div>
     </header>
   );
