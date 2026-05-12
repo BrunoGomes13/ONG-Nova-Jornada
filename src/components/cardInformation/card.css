@@ -1,6 +1,7 @@
-.cards-informacao {
+#cards-informacao {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:
+repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: var(--p-20);
 }
@@ -26,12 +27,6 @@
 }
 .card-1 .realce, .card-2 .realce, .card-3 .realce{
     padding: 15px 0px;
-    font-size: 25px;
+    font-size: clamp(18px, 22px, 26px);
     font-weight: bold;
-};
-@media (max-width: 768px) {
-  .cards-informacao {
-    grid-template-columns: 1fr;
-    margin: 0 auto;
-  }
 }

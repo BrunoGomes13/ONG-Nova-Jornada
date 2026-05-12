@@ -1,4 +1,5 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <header className="cabecalho">
@@ -11,12 +12,12 @@ function Header() {
       </div>
       <nav className="menu-navegacao" aria-label="Menu-Principal">
         <ul>
-          <li><a href="/">Início</a></li>
-          <li><a href="/quem-somos">Quem Somos</a></li>
-          <li><a href="/projetos">Projetos</a></li>
-          <li><a href="/animais">Animais</a></li>
-          <li><a href="/relatos">Relatos</a></li>
-          <li><a href="/contato">Contato</a></li>
+          <li><Link to="/">Início</Link></li>
+          <li><Link to="/quem-somos">Quem Somos</Link></li>
+          <li><Link to="/projetos">Projetos</Link></li>
+          <li><Link to="/animais">Animais</Link></li>
+          <li><Link to="/relatos">Relatos</Link></li>
+          <li><Link to="/contato">Contato</Link></li>
         </ul>
       </nav>
       <div className="acoes-usuario">

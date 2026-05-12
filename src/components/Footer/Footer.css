@@ -51,9 +51,7 @@ h4{
 }
 .rodape-direitos{
     width: 100%;
-    border-top: 1px solid #dcdcdc;
-    padding: var(--p-20);
-    grid-column: 1/span 3;
+    grid-column: span 3;
     text-align: center;
 }
 /*  */
@@ -93,7 +91,6 @@ h4{
         grid-template-columns: 1fr;
     }
     .rodape .rodape-direitos{
-        grid-column: 1;
-        grid-row: 5;
+        grid-column: span 1;
     }
 }

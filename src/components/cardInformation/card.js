@@ -2,7 +2,7 @@ import "./card.css";
 
 function Card() {
     return (
-        <section className="cards-informacao">
+        <section id="cards-informacao">
             <div className="card-1">
                 <span className="material-symbols-outlined">group</span>
                 <p className="realce">1200+</p>
