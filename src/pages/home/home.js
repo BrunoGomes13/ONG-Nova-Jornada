@@ -3,9 +3,9 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import logo from "../../assents/animals/foto.jpg";
-import Card from "../../components/cardInformation/card"
-import CardProject from "../../components/cardProjects/project";
-import CardAnimals from "../../components/cardAnimals/cardAnimals";
+import Card from "../../components/CardInformation/Card"
+import CardProject from "../../components/CardProjects/Project";
+import CardAnimals from "../../components/CardAnimals/CardAnimals";
 import { Link } from "react-router-dom";
 function Home() {
   return (

@@ -1,6 +1,6 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import CardAnimals from "../../components/cardAnimals/cardAnimals";
+import CardAnimals from "../../components/CardAnimals/CardAnimals";
 
 function Animais() {
     return (

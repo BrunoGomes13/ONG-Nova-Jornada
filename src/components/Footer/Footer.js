@@ -1,5 +1,6 @@
 import "./Footer.css";
 import "../Header/Header.css";
+import { Link } from "react-router-dom";
 function Footer() {
     return (
 
@@ -14,12 +15,12 @@ function Footer() {
             <nav className="menu-navegacao" aria-label="Menu-Segundário">
                 <h4>Navegação</h4>
                 <ul>
-                    <li><a href="/">Início</a></li>
-                    <li><a href="/quem-somos">Quem Somos</a></li>
-                    <li><a href="/projetos">Projetos</a></li>
-                    <li><a href="/animais">Animais</a></li>
-                    <li><a href="/relatos">Relatos</a></li>
-                    <li><a href="/contato">Contato</a></li>
+                    <Link to="/"><li>Home</li></Link>
+                    <Link to="/quem-somos"><li>Quem Somos</li></Link>
+                    <Link to="/projetos"><li>Projetos</li></Link>
+                    <Link to="/animais"><li>Animais</li></Link>
+                    <Link to="/relatos"><li>Relatos</li></Link>
+                    <Link to="/contato"><li>Contato</li></Link>
                 </ul>
             </nav>
             <div className="redes-sociais">

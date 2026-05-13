@@ -1,4 +1,4 @@
-import "./project.css";
+import "./Project.css";
 import foto1 from "../../assents/projects/card-1.jpg";
 import foto2 from "../../assents/projects/card-2.jpg";
 import foto3 from "../../assents/projects/card-3.jpg";

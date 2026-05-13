@@ -15,7 +15,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: left;
-    gap: 20px;
+    gap: 30px;
     background-color: var(--cor-fundo);
     padding: var(--p-20);
     max-width: 100%;
@@ -28,11 +28,14 @@
 .rodape .menu-navegacao ul{
         display: grid;
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 20px;
+}
+.rodape .menu-navegacao li{
+    opacity: 0.5;
 }
 h4{
     opacity: 0.8;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .redes-sociais .fa-brands{
     display: inline-block;
@@ -54,7 +57,7 @@ h4{
     grid-column: span 3;
     text-align: center;
 }
-/*  */
+/* Adicionando Cores aos Icones das redes sociais */
 .redes-sociais .fa-brands.fa-instagram:hover{
     transition: .3s ease;
     background: linear-gradient(
@@ -80,7 +83,7 @@ h4{
     #128c7e
   );
 }
-.rodape .menu-navegacao a:hover{
+.rodape .menu-navegacao li:hover{
     color:#00c6ff;
     background-color: transparent;
     padding: 0;

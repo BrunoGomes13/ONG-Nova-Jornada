@@ -10,7 +10,7 @@ function Header() {
           <p>Proteção animal</p>
         </div>
       </div>
-      <nav className="menu-navegacao" aria-label="Menu-Principal">
+      <nav className="menu-navegacao animacao" aria-label="Menu-Principal">
         <ul>
           <li><Link to="/">Início</Link></li>
           <li><Link to="/quem-somos">Quem Somos</Link></li>
@@ -22,7 +22,7 @@ function Header() {
       </nav>
       <div className="acoes-usuario">
         <button className="btn-login" ><span className="material-symbols-outlined">login</span>Entrar</button>
-        <button className="btn-adotar" ><span className="material-symbols-outlined">favorite</span>Adote-me</button>
+        <Link to="/animais"><button className="btn-adotar" ><span className="material-symbols-outlined">favorite</span>Adote-me</button></Link>
       </div>
     </header>
   );

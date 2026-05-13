@@ -1,17 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Bungee", sans-serif;
 }
-:root{
+
+:root {
     --cor-fundo: #ffffff;
     --cor-texto: #000;
     --p-20: 20px;
-    --fs:16px;
-    --linear-gdt:linear-gradient(135deg, #00c6ff,#00d084);
+    --fs: 16px;
+    --linear-gdt: linear-gradient(135deg, #00c6ff, #00d084);
 }
-.cabecalho{
+
+.cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,74 +24,91 @@
     flex-wrap: wrap;
     border-bottom: 1px solid #dcdcdc;
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.logo .material-symbols-outlined{
+
+.logo .material-symbols-outlined {
     background: var(--linear-gdt);
     color: var(--cor-fundo);
     font-size: 25px;
     padding: 15px;
     border-radius: 15px;
 }
-.logo span{
+
+.logo span {
     font-size: var(--fs);
     font-weight: bold;
 }
-.logo p{
+
+.logo p {
     opacity: 0.8;
 }
-.menu-navegacao li, .menu-navegacao li a{
+
+.menu-navegacao li,
+.menu-navegacao li a {
     list-style: none;
     text-decoration: none;
     font-size: var(--fs);
     color: var(--cor-texto);
     opacity: 0.8;
-    font-weight: bold;  
+    font-weight: bold;
     transition: .3s ease;
-    padding: 5px 0px;
+    background-color: transparent;
 }
-ul{
+.cabecalho .menu-navegacao.animacao li a{
+    padding: 10px 8px;
+}
+ul {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
 }
-.acoes-usuario{
+
+.acoes-usuario {
     display: flex;
     gap: 20px;
     align-items: center;
 }
-button{
+
+button {
     border: 1px solid #dcdcdc;
     background-color: transparent;
 }
+
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 300,
-  'GRAD' 0,
-  'opsz' 16
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 16
 }
-.btn-login,.btn-adotar{
+
+.btn-login,
+.btn-adotar {
     display: flex;
     align-items: center;
-    gap:10px;
+    gap: 10px;
     padding: 8px;
     font-weight: bold;
     border-radius: 18px;
     transition: .3s ease;
 }
-.btn-adotar{
+
+.btn-adotar {
     background: var(--linear-gdt);
     color: #fff;
 }
 /* HOVER == QUANDO O USUÁRIO PASSA O MOUSE POR CIMA */
-.btn-login:hover, .btn-adotar:hover{
+.btn-login:hover,
+.btn-adotar:hover {
     opacity: 0.5;
 }
-.menu-navegacao li a:hover{
+
+.menu-navegacao li a:hover {
     background: #e0e0e0;
     padding: 10px 8px;
     border-radius: 18px;
