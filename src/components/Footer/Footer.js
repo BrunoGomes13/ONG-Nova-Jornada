@@ -1,6 +1,5 @@
 import "./Footer.css";
 import "../Header/Header.css";
-import { Link } from "react-router-dom";
 function Footer() {
     return (
 
@@ -12,17 +11,6 @@ function Footer() {
                     <p>Proteção animal</p>
                 </div>
             </div>
-            <nav className="menu-navegacao" aria-label="Menu-Segundário">
-                <h4>Navegação</h4>
-                <ul>
-                    <Link to="/"><li>Home</li></Link>
-                    <Link to="/quem-somos"><li>Quem Somos</li></Link>
-                    <Link to="/projetos"><li>Projetos</li></Link>
-                    <Link to="/animais"><li>Animais</li></Link>
-                    <Link to="/relatos"><li>Relatos</li></Link>
-                    <Link to="/contato"><li>Contato</li></Link>
-                </ul>
-            </nav>
             <div className="redes-sociais">
                 <h4>Conecte-se</h4>
                 <a href="/"><i className="fa-brands fa-instagram"></i></a>
