@@ -1,4 +1,4 @@
-import "../CardInformation/Card.css";
+import "../cardInformation/Card.css";
 import "./CardAnimals.css";
 import foto from "../../assents/animals/foto.jpg";
 import foto1 from "../../assents/animals/thor.jpg";

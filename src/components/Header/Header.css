@@ -23,55 +23,60 @@
     height: 20%;
     flex-wrap: wrap;
     border-bottom: 1px solid #dcdcdc;
+    gap: 20px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .logo .material-symbols-outlined {
     background: var(--linear-gdt);
     color: var(--cor-fundo);
-    font-size: 25px;
-    padding: 15px;
+    font-size: 20px;
+    padding: 10px;
     border-radius: 15px;
 }
 
 .logo span {
-    font-size: var(--fs);
+    font-size: 14px;
     font-weight: bold;
 }
 
 .logo p {
     opacity: 0.8;
+    font-size: 11px;
 }
 
 .menu-navegacao li,
 .menu-navegacao li a {
     list-style: none;
     text-decoration: none;
-    font-size: var(--fs);
+    font-size: 13px;
     color: var(--cor-texto);
     opacity: 0.8;
     font-weight: bold;
     transition: .3s ease;
     background-color: transparent;
+    white-space: nowrap;
 }
 .cabecalho .menu-navegacao.animacao li a{
-    padding: 10px 8px;
+    padding: 6px 5px;
 }
 ul {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+    flex-wrap: nowrap;
+    gap: 15px;
 }
 
 .acoes-usuario {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
+    flex-shrink: 0;
 }
 
 button {
@@ -84,18 +89,26 @@ button {
         'FILL' 0,
         'wght' 300,
         'GRAD' 0,
-        'opsz' 16
+        'opsz' 16;
+    font-size: 18px;
+}
+
+.btn-login .material-symbols-outlined,
+.btn-adotar .material-symbols-outlined {
+    font-size: 16px;
 }
 
 .btn-login,
 .btn-adotar {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 8px;
+    gap: 5px;
+    padding: 6px 12px;
     font-weight: bold;
     border-radius: 18px;
     transition: .3s ease;
+    font-size: 13px;
+    white-space: nowrap;
 }
 
 .btn-adotar {
@@ -113,4 +126,115 @@ button {
     padding: 10px 8px;
     border-radius: 18px;
     opacity: 1;
+}
+
+.menu-navegacao {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.menu-navegacao ul {
+    display: flex;
+}
+
+/* BOTÃO HAMBURGER */
+.btn-hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.btn-hamburger .material-symbols-outlined {
+    color: var(--cor-texto);
+}
+
+/* RESPONSIVIDADE PARA TELAS PEQUENAS */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px;
+        align-items: center;
+    }
+
+    .logo {
+        flex: 1;
+        min-width: 200px;
+        order: 1;
+    }
+
+    .logo span {
+        font-size: 14px;
+    }
+
+    .logo p {
+        font-size: 12px;
+    }
+
+    .btn-hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 2;
+        padding: 8px;
+    }
+
+    .menu-navegacao {
+        order: 3;
+        width: 100%;
+        background-color: var(--cor-fundo);
+        border-top: 1px solid #dcdcdc;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        display: block;
+    }
+
+    .menu-navegacao.ativo {
+        max-height: 400px;
+    }
+
+    .menu-navegacao ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 0;
+    }
+
+    .menu-navegacao li {
+        width: 100%;
+    }
+
+    .menu-navegacao li a {
+        display: block;
+        padding: 15px 20px;
+        opacity: 0.8;
+    }
+
+    .menu-navegacao li a:hover {
+        background: #f0f0f0;
+        padding: 15px 20px;
+    }
+
+    .acoes-usuario {
+        width: 100%;
+        order: 4;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .btn-login,
+    .btn-adotar {
+        flex: 1;
+        max-width: 150px;
+        justify-content: center;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .btn-login {
+        border: 1px solid #dcdcdc;
+    }
 }

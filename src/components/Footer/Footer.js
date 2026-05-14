@@ -1,5 +1,4 @@
 import "./Footer.css";
-import "../Header/Header.css";
 import { Link } from "react-router-dom";
 function Footer() {
     return (
@@ -15,22 +14,19 @@ function Footer() {
             <nav className="menu-navegacao" aria-label="Menu-Segundário">
                 <h4>Navegação</h4>
                 <ul>
-                    <Link to="/"><li>Home</li></Link>
-                    <Link to="/quem-somos"><li>Quem Somos</li></Link>
                     <Link to="/projetos"><li>Projetos</li></Link>
                     <Link to="/animais"><li>Animais</li></Link>
-                    <Link to="/relatos"><li>Relatos</li></Link>
                     <Link to="/contato"><li>Contato</li></Link>
                 </ul>
             </nav>
             <div className="redes-sociais">
                 <h4>Conecte-se</h4>
-                <a href="/"><i className="fa-brands fa-instagram"></i></a>
-                <a href="/"><i className="fa-brands fa-facebook"></i></a>
-                <a href="/"><i className="fa-brands fa-whatsapp"></i></a>
-                <p>contato@ongpmb.org <br/>(11) 4002-8922</p>
+                <Link to="/"><i className="fa-brands fa-instagram"></i></Link>
+                <Link to="/"><i className="fa-brands fa-facebook"></i></Link>
+                <Link to="/"><i className="fa-brands fa-whatsapp"></i></Link>
+                <p>contato@ongpmb.org <br/> <br/>(11) 4002-8922</p>
             </div>
-            <p className="rodape-direitos">&copy;  2026 ONG Nova Jornada Animal. Feito com 💙 por quem ama os animais</p>
+            <p className="rodape-direitos">&copy; 2026 ONG Nova Jornada Animal. Feito com 💙 por quem ama os animais</p>
         </footer>
     );
 }

@@ -10,12 +10,12 @@ function Card() {
             </div>
             <div className="card-2">
                 <span className="material-symbols-outlined">group</span>
-                <p className="realce">1200+</p>
+                <p className="realce">800+</p>
                 <p >Adoções felizes</p>
             </div>
             <div className="card-3">
                 <span className="material-symbols-outlined">group</span>
-                <p className="realce">1200+</p>
+                <p className="realce">60+</p>
                 <p>Animais aguardando adoção</p>
             </div>
         </section>

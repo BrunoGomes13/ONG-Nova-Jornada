@@ -3,9 +3,9 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import logo from "../../assents/animals/foto.jpg";
-import Card from "../../components/CardInformation/Card"
-import CardProject from "../../components/CardProjects/Project";
-import CardAnimals from "../../components/CardAnimals/CardAnimals";
+import Card from "../../components/cardInformation/Card"
+import CardProject from "../../components/cardProjects/Project";
+import CardAnimals from "../../components/cardAnimals/CardAnimals";
 import { Link } from "react-router-dom";
 function Home() {
   return (
@@ -20,8 +20,8 @@ function Home() {
           <h1>Cada vida importa.<br></br><span className="mudar-cor">Adote um amigo.</span></h1>
           <p>Somos a ONG Nova Jornada Animal. Resgatamos, cuidamos e conectamos animais a famílias cheias de amor.<br></br>Encontre seu novo melhor amigo hoje.</p>
           <div className="acoes-usuario">
-            <Link to="/animais"><button className="btn-adotar" ><span className="material-symbols-outlined">favorite</span>Conhecer os Animais</button></Link>
-            <Link to="/quem-somos"> <button className="btn-login">Quem Somos<span className="material-symbols-outlined">arrow_forward</span></button> </Link>
+            <Link to="/animais"><button className="btn-adotar" ><span className="material-symbols-outlined">favorite</span>Conhecer <br/>os Animais</button></Link>
+            <Link to="/quem-somos"> <button className="btn-login">Conheça mais <br/> sobre a ONG<span className="material-symbols-outlined">arrow_forward</span></button> </Link>
           </div>
         </section>
         <section className="imagem-apresentacao">

@@ -6,15 +6,15 @@
     background: linear-gradient(135deg, #e2ebf7 0%,
             #f0f7f5 50%,
             #a1f2c4 100%);
-    margin: var(--p-20);
+    margin: 20px;
     border-radius: 18px;
-    padding: var(--p-20);
+    padding: 20px;
 }
 
 .apresentacao,
 .imagem-apresentacao {
     padding: var(--p-20);
-    max-width: 80%;
+    max-width: 80%
 }
 
 .tag {
@@ -114,11 +114,11 @@ a {
 @media (max-width: 768px) {
     .conteudo-principal {
         grid-template-columns: 1fr;
-        margin: 0 auto;
     }
     .apresentacao,
     .imagem-apresentacao {
         max-width: 100%;
+        justify-items: center;
     }
     .sobre-nos {
         grid-template-columns: 1fr;
