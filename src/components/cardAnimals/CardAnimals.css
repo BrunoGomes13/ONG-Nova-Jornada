@@ -45,14 +45,14 @@
     background-color: #1e81b0;
 }
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 699px) {
     #card-animals {
         grid-template-columns: 1fr;
         justify-items: center;
         margin: 0;
     }
 }
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 700px) and (max-width: 1200px) {
     #card-animals{
         grid-template-columns: repeat(2, 1fr);
     }

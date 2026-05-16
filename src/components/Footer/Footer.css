@@ -64,6 +64,7 @@ h4 {
 
 .redes-sociais p {
     font-size: clamp(14px, 16px, 18px);
+    font-weight: bold;
     padding: 25px 0px;
     opacity: 0.5;
 }
@@ -126,5 +127,6 @@ h4 {
     }
     .rodape .menu-navegacao li {
         font-size: 14px;
+        font-weight: bold;
     }
 }

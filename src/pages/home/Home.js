@@ -53,7 +53,7 @@ function Home() {
       </section>
       {/* CARDS ANIMAIS */}
       <CardAnimals />
-      <button className="btn-login btn-ver-todos" type="button">Ver todos os animais</button>
+      <Link to="/animais"><button className="btn-login btn-ver-todos" type="button">Ver todos <br/>os animais</button></Link>
       {/* RODAPÉ */}
       <Footer />
 
