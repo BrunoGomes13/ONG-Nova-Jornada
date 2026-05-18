@@ -4,7 +4,7 @@ import "./CardAnimals.css";
 
 // Função auxiliar que monta o caminho dinâmico da imagem usando require(), que é necessario para o webpack processar e empacotar o arquivo.
 function getImagem(nomeArquivo) {
-  return require("../../assents/animals/" + nomeArquivo);
+  return require("../../assets/animals/" + nomeArquivo);
 }
 
 // Componente responsável por exibir a grade de cards dos animais disponíveis para adoção.

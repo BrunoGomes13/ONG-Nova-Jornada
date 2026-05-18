@@ -7,7 +7,7 @@ import "./DetalheAnimal.css";
 
 // Função auxiliar que monta o caminho dinâmico da imagem usando require(), que é necessario para o webpack processar e empacotar o arquivo.
 function getImagem(nomeArquivo) {
-  return require("../../assents/animals/" + nomeArquivo);
+  return require("../../assets/animals/" + nomeArquivo);
 }
 
 // Componente de página que exibe os detalhes completos de um animal para adoção. Usa o id para identificar os dados do animal no Json.

@@ -2,7 +2,7 @@ import "./style.css";
 import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import logo from "../../assents/animals/bento.jpg";
+import logo from "../../assets/animals/bento.jpg";
 import Card from "../../components/cardInformation/Card"
 import CardProject from "../../components/cardProjects/Project";
 import CardAnimals from "../../components/cardAnimals/CardAnimals";

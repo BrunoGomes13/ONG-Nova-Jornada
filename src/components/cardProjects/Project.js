@@ -1,7 +1,7 @@
 import "./Project.css";
-import foto1 from "../../assents/projects/card-1.jpg";
-import foto2 from "../../assents/projects/card-2.jpg";
-import foto3 from "../../assents/projects/card-3.jpg";
+import foto1 from "../../assets/projects/card-1.jpg";
+import foto2 from "../../assets/projects/card-2.jpg";
+import foto3 from "../../assets/projects/card-3.jpg";
 
 function CardProject() {
     return (
