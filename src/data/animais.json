@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "nome": "Thor",
+    "img": "thor.jpg",
+    "especie": "Cachorro",
+    "idade": "2 anos",
+    "desc": "Brincalhão e cheio de energia, adora crianças.",
+    "sexo": "Macho",
+    "porte": "Médio",
+    "historia": "Thor foi resgatado das ruas em janeiro deste ano. É um cão muito carinhoso, vacinado, castrado e vermifugado. Procura uma família que possa oferecer espaço para correr e muito amor.",
+    "whatsapp": "5583999999999"
+  },
+  {
+    "id": 2,
+    "nome": "Luna",
+    "img": "luna.jpg",
+    "especie": "Gato",
+    "idade": "1 ano",
+    "desc": "Dócil e companheira, perfeita para apartamento.",
+    "sexo": "Fêmea",
+    "porte": "Pequeno",
+    "historia": "Luna é uma gatinha muito carinhosa que adora colo. Está castrada, vacinada e usa caixa de areia perfeitamente. Ideal para quem mora em apartamento.",
+    "whatsapp": "5583999999999"
+  },
+  {
+    "id": 3,
+    "nome": "Bento",
+    "img": "bento.jpg",
+    "especie": "Cachorro",
+    "idade": "6 meses",
+    "desc": "Filhote curioso e sociável.",
+    "sexo": "Macho",
+    "porte": "Pequeno",
+    "historia": "Bento é um filhote muito esperto e cheio de personalidade. Está em fase de socialização e aprendendo comandos básicos. Vacinado e vermifugado.",
+    "whatsapp": "5583999999999"
+  },
+  {
+    "id": 4,
+    "nome": "Mel",
+    "img": "mel.jpg",
+    "especie": "Coelho",
+    "idade": "8 meses",
+    "desc": "Brincalhão e cheia de energia, adora cenouras.",
+    "sexo": "Fêmea",
+    "porte": "Pequeno",
+    "historia": "Mel é uma coelhinha super tranquila, ideal para famílias. Está acostumada com humanos e responde bem ao carinho.",
+    "whatsapp": "5583999999999"
+  },
+
+  {
+    "id": 5,
+    "nome": "Nina",
+    "img": "nina.jpg",
+    "especie": "Gato",
+    "idade": "3 anos",
+    "desc": "Independente e curiosa, ama observar a janela.",
+    "sexo": "Fêmea",
+    "porte": "Médio",
+    "historia": "Nina foi resgatada de uma situação de abandono. Hoje está saudável, castrada e procurando um lar definitivo onde possa receber carinho no seu tempo.",
+    "whatsapp": "5583999999999"
+  },
+
+  {
+    "id": 6,
+    "nome": "Rex",
+    "img": "rex.jpg",
+    "especie": "Cachorro",
+    "idade": "4 anos",
+    "desc": "Protetor e leal, ótimo guardião.",
+    "sexo": "Macho",
+    "porte": "Grande",
+    "historia": "Rex é um cão adulto, equilibrado e muito amoroso com a família. Já passou por adestramento básico e se dá bem com outros cães.",
+    "whatsapp": "5583999999999"
+  },
+  
+  {
+    "id": 7,
+    "nome": "Mia",
+    "img": "mia.jpg",
+    "especie": "Gato",
+    "idade": "5 meses",
+    "desc": "Filhote brincalhona e cheia de energia.",
+    "sexo": "Fêmea",
+    "porte": "Pequeno",
+    "historia": "Mia é uma filhote que adora brincar. Está sendo socializada e procura uma família paciente e carinhosa.",
+    "whatsapp": "5583999999999"
+  }  
+]
