@@ -1,64 +1,157 @@
-#card-animals{
+:root {
+    --linear-gdt: linear-gradient(135deg, #00c6ff, #00d084);
+}
+
+#card-animals {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
     padding: var(--p-20);
     margin-bottom: 30px;
 }
-#card-animals .card-conteudo{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    border-radius: 0 0 18px 18px;
-    padding: 20px;
-    transition:  0.3s ease;
-}
-#card-animals .card{
-    width: 350px;
-}
-/* IDADE DO ANIMAL */
-#card-animals .card-conteudo .idade-animal{
-    grid-column:2;
-    justify-self: end;
-    grid-row: 1;
-}
-/* PARÁGRAFO DE DESCRIÇÃO DO ANIMAL */
-#card-animals .card-conteudo p{
-    grid-column: span 2
-}
-/* BOTÃO DE ADOÇÃO */
-#card-animals .card-conteudo .btn-adotar-animal{
-    grid-column: span 3;
-    padding: 10px 20px;
-    border: none;
-    background-color: #27a4ec;
-    font-size: var(--fs);
-    color: var(--cor-fundo);
+
+#card-animals .card {
+    position: relative;
+    background-color: #ffffff;
     border-radius: 18px;
-    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
 }
-/* HOVER: QUANDO O USUÁRIO PASSA O MOUSE POR CIMA DO CARD */
-#card-animals .card:hover{
-    transform: scaleY(1.02);
+
+#card-animals .card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
-#card-animals .card-conteudo .btn-adotar-animal:hover{
-    background-color: #1e81b0;
+
+.tag-adote {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--linear-gdt);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    z-index: 2;
 }
+
+.tag-especie {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+#card-animals .card-conteudo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 12px;
+    column-gap: 20px;
+    padding: 20px;
+}
+
+#card-animals .card-conteudo h3 {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+#card-animals .card-conteudo .idade-animal {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    margin: 0;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+#card-animals .card-conteudo .descricao-animal {
+    grid-column: span 2;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+#card-animals .card-conteudo .btn-adotar-animal {
+    grid-column: span 2;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    background: #00a8f3;
+    font-size: var(--fs);
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#card-animals .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+#card-animals .card:hover img {
+    transform: scale(1.07);
+}
+
+#card-animals .card-conteudo .btn-adotar-animal:hover {
+    background-color: #0495bd;
+}
+
+#card-animals .card .img-wrapper {
+    height: 240px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+#card-animals .card .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#card-animals .card:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+
 /* Responsive Design */
 @media (max-width: 699px) {
+
+@media (max-width: 768px) {
     #card-animals {
         grid-template-columns: 1fr;
         justify-items: center;
         margin: 0;
     }
 }
-@media (min-width: 700px) and (max-width: 1200px) {
-    #card-animals{
+@media (min-width: 769px) and (max-width: 1200px) {
+    #card-animals {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (min-width: 1200px) and (max-width: 1500px) {
-    #card-animals{
+    #card-animals {
         grid-template-columns: repeat(3, 1fr);
     }
+}
 }
