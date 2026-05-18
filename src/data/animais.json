@@ -50,14 +50,14 @@
 
   {
     "id": 5,
-    "nome": "Nina",
-    "img": "nina.jpg",
-    "especie": "Gato",
-    "idade": "3 anos",
-    "desc": "Independente e curiosa, ama observar a janela.",
+    "nome": "Princesa",
+    "img": "princesa.jpg",
+    "especie": "Cachorro",
+    "idade": "9 anos",
+    "desc": "Doce e tranquila.",
     "sexo": "Fêmea",
     "porte": "Médio",
-    "historia": "Nina foi resgatada de uma situação de abandono. Hoje está saudável, castrada e procurando um lar definitivo onde possa receber carinho no seu tempo.",
+    "historia": "Princesa adora comer e aproveitar momentos calmos ao lado de quem ama. Perfeita para quem busca uma companheira fiel e sossegada.",
     "whatsapp": "5583999999999"
   },
 
@@ -85,5 +85,18 @@
     "porte": "Pequeno",
     "historia": "Mia é uma filhote que adora brincar. Está sendo socializada e procura uma família paciente e carinhosa.",
     "whatsapp": "5583999999999"
-  }  
+  },
+  
+  {
+    "id": 8,
+    "nome": "Nina",
+    "img": "nina.jpg",
+    "especie": "Gato",
+    "idade": "3 anos",
+    "desc": "Independente e curiosa, ama observar a janela.",
+    "sexo": "Fêmea",
+    "porte": "Médio",
+    "historia": "Nina foi resgatada de uma situação de abandono. Hoje está saudável, castrada e procurando um lar definitivo onde possa receber carinho no seu tempo.",
+    "whatsapp": "5583999999999"
+  }
 ]
