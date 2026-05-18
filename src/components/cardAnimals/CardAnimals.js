@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import animais from "../../data/animais.json";
 import "./CardAnimals.css";
 
@@ -8,7 +9,7 @@ function getImagem(nomeArquivo) {
 }
 
 // Componente responsável por exibir a grade de cards dos animais disponíveis para adoção.
-function CardAnimals({ filtro, pesquisa }) {
+function CardAnimals({ filtro = "Todos", pesquisa = "", limite }) {
   const navigate = useNavigate();
 
   const animaisFiltrados = animais.filter((animal) => {
@@ -19,11 +20,18 @@ function CardAnimals({ filtro, pesquisa }) {
     return matchesFiltro && matchesBusca;
   });
 
+  const animaisParaExibir = limite ? animaisFiltrados.slice(0, limite) : animaisFiltrados;
+
+  // Rola a página para o topo (posição 0,0) assim que o componente é montado.
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   return (
 
     /* Percorre os animais filtrados e renderiza um card para cada um. O "key" com o id único é obrigatório para o React identificar cada item da lista */
     <div className="cards-grid" id="card-animals">
-      {animaisFiltrados.map((animal) => (
+      {animaisParaExibir.map((animal) => (
         <div key={animal.id} className="card">
 
           <div className="tag-adote">

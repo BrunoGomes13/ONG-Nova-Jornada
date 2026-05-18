@@ -52,7 +52,7 @@ function Home() {
         <Link to="/animais"><button className="btn-login">Ver todos os animais<span className="material-symbols-outlined">arrow_forward</span></button></Link>
       </section>
       {/* CARDS ANIMAIS */}
-      <CardAnimals />
+      <CardAnimals limite={5} />
       <Link to="/animais"><button className="btn-login btn-ver-todos" type="button">Ver todos <br/>os animais</button></Link>
       {/* RODAPÉ */}
       <Footer />
