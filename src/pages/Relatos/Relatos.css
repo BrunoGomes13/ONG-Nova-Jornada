@@ -1,0 +1,33 @@
+.relatos-container {
+  padding: 40px 5%;
+}
+
+.relatos-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.relatos-header h1 {
+  font-size: 42px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.relatos-header p { 
+  max-width: 700px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.6;
+}
+
+.relatos-cards {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+
+  margin-top: 50px;
+}

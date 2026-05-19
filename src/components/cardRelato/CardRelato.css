@@ -1,0 +1,81 @@
+.card-relato {
+  width: 520px;
+
+  background: white;
+
+  border: 1px solid rgba(226, 232, 240, 0.8);
+
+  border-radius: 16px;
+
+  padding: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+
+  transition: box-shadow 0.3s ease;
+}
+
+.card-relato:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.aspas {
+  font-size: 52px;
+
+  color: #bae6fd;
+
+  line-height: 1;
+
+  margin-bottom: -10px;
+}
+
+.texto-relato {
+  color: #334155;
+
+  line-height: 1.8;
+
+  font-style: italic;
+
+  margin-bottom: 10px;
+}
+
+.usuario-relato {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #f1f5f9;
+}
+
+.usuario-img {
+  width: 48px;
+
+  height: 48px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.usuario-relato h3 {
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #1e293b;
+
+  margin: 0;
+}
+
+.usuario-relato span {
+  font-size: 12px;
+
+  color: #64748b;
+}
