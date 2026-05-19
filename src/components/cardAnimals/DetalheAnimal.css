@@ -161,6 +161,28 @@
     opacity: 0.88;
 }
 
+.btn-coracao {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  z-index: 10;
+}
+
+.btn-coracao:hover {
+  transform: scale(1.20);
+}
+
 .btn-whatsapp {
     display: flex;
     align-items: center;
