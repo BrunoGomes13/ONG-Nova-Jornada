@@ -1,0 +1,156 @@
+.quem-somos {
+  padding: 90px 80px;
+  background-color: #f8fafc;
+}
+
+.quem-somos-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+  margin-bottom: 100px;
+}
+
+.quem-somos-content {
+  flex: 1;
+}
+
+.subtitulo {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f59e0b;
+  margin-bottom: 18px;
+}
+
+.quem-somos-content h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  color: #0f172a;
+  margin-bottom: 30px;
+}
+
+.quem-somos-content p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+.quem-somos-images {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+}
+
+.quem-somos-images img {
+  width: 280px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.info-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 28px;
+}
+
+.blue {
+  background-color: #0ea5e9;
+}
+
+.green {
+  background-color: #10b981;
+}
+
+.orange {
+  background-color: #f59e0b;
+}
+
+.info-card h3 {
+  font-size: 28px;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.info-card p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+@media (max-width: 1200px) {
+  .quem-somos-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quem-somos-images {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .quem-somos {
+    padding: 50px 25px;
+  }
+
+  .quem-somos-content h1 {
+    font-size: 40px;
+  }
+
+  .quem-somos-content p {
+    font-size: 18px;
+  }
+
+  .quem-somos-images {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .quem-somos-images img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .info-card {
+    padding: 32px;
+  }
+
+  .info-card h3 {
+    font-size: 24px;
+  }
+}
