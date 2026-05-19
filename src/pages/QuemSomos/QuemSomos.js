@@ -19,9 +19,7 @@ function QuemSomos() {
             <span className="subtitulo">Quem Somos</span>
 
             <h1>
-              Uma história movida a amor pelos
-              <br />
-              animais
+              Uma história movida a amor pelos animais
             </h1>
 
             <p>

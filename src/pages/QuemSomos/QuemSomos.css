@@ -17,21 +17,21 @@
 
 .subtitulo {
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #f59e0b;
   margin-bottom: 18px;
 }
 
 .quem-somos-content h1 {
-  font-size: 56px;
+  font-size: 53px;
   line-height: 1.1;
   color: #0f172a;
   margin-bottom: 30px;
 }
 
 .quem-somos-content p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.8;
   color: #475569;
   margin-bottom: 24px;
