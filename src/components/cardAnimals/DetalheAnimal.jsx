@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Heart } from 'lucide-react';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import animais from '../../data/animais.json';
@@ -15,6 +16,9 @@ function DetalheAnimal() {
   const { id } = useParams();
   const navigate = useNavigate();
   const animal = animais.find((a) => a.id === Number(id));
+
+  // Atualiza o estado de interesse
+  const [interesse, setInteresse] = useState(false);
 
 // Rola a página para o topo (posição 0,0) assim que o componente é montado.
   useEffect(() => {
@@ -37,6 +41,21 @@ function DetalheAnimal() {
         <div className="detalhe-hero">
           <div className="detalhe-img-wrap">
             <div className="tag-disp">Disponivel</div>
+ 
+            {/* Botao coração (Tenho interesse) */}
+            <button
+              className={`btn-coracao ${interesse ? "ativo" : ""}`}
+              onClick={() => setInteresse((prev) => !prev)}
+              aria-label={interesse ? "Remover interesse" : "Adicionar interesse"}
+            >
+              <Heart
+                size={20}
+                fill={interesse ? "#e74c3c" : "transparent"}
+                color={interesse ? "#e74c3c" : "#ffffff"}
+                strokeWidth={2}
+              />
+            </button>
+
             <img src={getImagem(animal.img)} alt={"Foto de " + animal.nome} />
           </div>
 
@@ -69,8 +88,14 @@ function DetalheAnimal() {
               <p>{animal.historia}</p>
             </div>
 
-            <div className="detalhe-actions">
-              <button className="btn-interesse">Tenho interesse</button>
+            <div className="detalhe-actions">           
+              <button
+                className="btn-interesse"
+                onClick={() => setInteresse(true)}
+              >
+                Tenho interesse
+              </button>
+
               <a
                 className="btn-whatsapp"
                 href={"https://wa.me/" + animal.whatsapp}
