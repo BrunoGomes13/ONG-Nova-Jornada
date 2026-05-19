@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 import animais from '../../data/animais.json';
 import "./DetalheAnimal.css";
 
-// Função auxiliar que monta o caminho dinâmico da imagem usando require(), que é necessario para o webpack processar e empacotar o arquivo.
+// Funcao auxiliar que monta o caminho dinâmico da imagem usando require(), que é necessario para o webpack processar e empacotar o arquivo.
 function getImagem(nomeArquivo) {
   return require("../../assets/animals/" + nomeArquivo);
 }
@@ -19,6 +19,27 @@ function DetalheAnimal() {
 
   // Atualiza o estado de interesse
   const [interesse, setInteresse] = useState(false);
+
+// Funcao que prepara o email para enviar pelo app do usuario.
+function handleEnviar() {
+  if (!nome.trim()) {
+    setErro("Por favor, informe seu nome.");
+    return;
+  }
+  setErro("");
+
+  const ONG_EMAIL = "alan.chagas@maisunifacisa.com.br";
+  const assunto = encodeURIComponent(`Estou interessado em adotar o animal ${animal.nome}`);
+  const corpo = encodeURIComponent(
+    mensagem.trim() || `Olá! Gostaria de saber mais sobre o(a) ${animal.nome}.`
+  );
+
+  window.location.href = `mailto:${ONG_EMAIL}?subject=${assunto}&body=${corpo}`;
+}
+
+  const [nome, setNome] = useState("");
+  const [mensagem, setMensagem] = useState("");
+  const [erro, setErro] = useState("");
 
 // Rola a página para o topo (posição 0,0) assim que o componente é montado.
   useEffect(() => {
@@ -109,25 +130,38 @@ function DetalheAnimal() {
         </div>
 
         <div className="detalhe-form-contato">
-          <h2>Quer saber mais sobre {animal.nome}?</h2>
-          <div className="detalhe-form-row">
-            <div className="detalhe-form-group">
-              <label>Seu nome</label>
-              <input type="text" placeholder="Como podemos te chamar?" />
-            </div>
-            <div className="detalhe-form-group">
-              <label>Email</label>
-              <input type="email" placeholder="voce@email.com" />
-            </div>
+        <h2>Quer saber mais sobre {animal.nome}?</h2>
+        <div className="detalhe-form-row">
+          <div className="detalhe-form-group">
+            <label>Seu nome</label>
+            <input
+              type="text"
+              placeholder="Como podemos te chamar?"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+            />
+          </div>
+          <div className="detalhe-form-group">
+            <label>Email</label>
+            <input type="text" disabled placeholder="Será usado o seu app de email" />
+          </div>
           </div>
           <div className="detalhe-form-group">
             <label>Mensagem</label>
-            <textarea rows={3} placeholder={"Ola! Gostaria de saber mais sobre o(a) " + animal.nome + "."} />
+            <textarea
+              rows={3}
+              placeholder={`Olá! Gostaria de saber mais sobre o(a) ${animal.nome}.`}
+              value={mensagem}
+              onChange={(e) => setMensagem(e.target.value)}
+            />
           </div>
           <div className="detalhe-form-footer">
-            <button className="btn-enviar">Enviar interesse</button>
+            {erro && <p style={{ color: "red", fontSize: "13px" }}>{erro}</p>}
+            <button className="btn-enviar" onClick={handleEnviar}>
+              Enviar interesse
+            </button>
           </div>
-        </div>
+      </div>
 
       </main>
 
