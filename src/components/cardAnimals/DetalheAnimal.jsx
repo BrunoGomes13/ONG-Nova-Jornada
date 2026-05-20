@@ -18,7 +18,19 @@ function DetalheAnimal() {
   const animal = animais.find((a) => a.id === Number(id));
 
   // Atualiza o estado de interesse
-  const [interesse, setInteresse] = useState(false);
+  const [interesse, setInteresse] = useState(() => {
+  const salvo = JSON.parse(localStorage.getItem('favoritos') || '[]');
+  return salvo.includes(animal.id);
+});
+
+function toggleFavorito() {
+  const salvo = JSON.parse(localStorage.getItem('favoritos') || '[]');
+  const novo = interesse
+    ? salvo.filter((id) => id !== animal.id)
+    : [...salvo, animal.id];
+  localStorage.setItem('favoritos', JSON.stringify(novo));
+  setInteresse(!interesse);
+}
 
 // Funcao que prepara o email para enviar pelo app do usuario.
 function handleEnviar() {
@@ -66,7 +78,7 @@ function handleEnviar() {
             {/* Botao coração (Tenho interesse) */}
             <button
               className={`btn-coracao ${interesse ? "ativo" : ""}`}
-              onClick={() => setInteresse((prev) => !prev)}
+              onClick={() => toggleFavorito()}
               aria-label={interesse ? "Remover interesse" : "Adicionar interesse"}
             >
               <Heart
@@ -112,7 +124,7 @@ function handleEnviar() {
             <div className="detalhe-actions">           
               <button
                 className="btn-interesse"
-                onClick={() => setInteresse(true)}
+                onClick={() => toggleFavorito()}
               >
                 Tenho interesse
               </button>
