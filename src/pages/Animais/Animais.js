@@ -9,7 +9,7 @@ function Animais() {
   const [busca, setBusca] = useState("");
   const [filtroEspecie, setFiltroEspecie] = useState("Todos");
 
-  const especies = ["Todos", "Cachorro", "Gato", "Coelho"];
+  const especies = ["Todos", "Cachorro", "Gato", "Coelho", "Favoritos"];
 
   return (
     <>

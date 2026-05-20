@@ -26,7 +26,10 @@ setFavoritos(novo);
 }
 
   const animaisFiltrados = animais.filter((animal) => {
-    const matchesFiltro = filtro === "Todos" || animal.especie === filtro;
+    const matchesFiltro = 
+    filtro === "Todos" ? true : 
+    filtro === "Favoritos" ? favoritos.includes(animal.id) :
+    animal.especie === filtro;
     const matchesBusca = (animal.nome || "")
       .toLowerCase()
       .includes((pesquisa || "").toLowerCase());
@@ -91,7 +94,12 @@ setFavoritos(novo);
 
       {/* Mensagem apresentada quando não encontra nenhum animal*/}
       {animaisFiltrados.length === 0 && (
-        <p className="sem-resultados">Nenhum animal encontrado com esses criterios.</p>
+        <p className="sem-resultados">
+        {filtro === "Favoritos"
+        ? "Você ainda não favoritou nenhum animal."
+        : "Nenhum animal encontrado com esses critérios."
+        }
+        </p>
       )}
     </div>
   );
