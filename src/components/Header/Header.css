@@ -13,7 +13,7 @@
     --linear-gdt: linear-gradient(135deg, #00c6ff, #00d084);
 }
 body{
-     padding-top: 100px;
+     padding-top: 80px;
 }
 .cabecalho {
     display: flex;
@@ -248,5 +248,8 @@ button {
 
     .btn-login {
         border: 1px solid #dcdcdc;
+    }
+    body{
+        padding-top: 100px;
     }
 }

@@ -9,6 +9,7 @@
     margin: 20px;
     border-radius: 18px;
     padding: 20px;
+    /* padding-top: 100px; */
 }
 
 .apresentacao,
@@ -116,9 +117,12 @@ a {
         grid-template-columns: 1fr;
     }
     .apresentacao,
-    .imagem-apresentacao {
+    .imagem-apresentacao{
         max-width: 100%;
         justify-items: center;
+    }
+    .apresentacao p {
+        text-align: center;
     }
     .sobre-nos {
         grid-template-columns: 1fr;

@@ -6,12 +6,14 @@ import Animais from '../pages/Animais/Animais';
 import DetalheAnimal from '../components/cardAnimals/DetalheAnimal';
 import Relatos from '../pages/Relatos/Relatos';
 import Contato from '../pages/Contato/Contato';
+import Login from'../components/Login/Login';
 
 function AppRoutes() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path='/login' element={<Login />} />
                 <Route path='/quem-somos' element={<QuemSomos />} />
                 <Route path='/projetos' element={<Projetos />} />
                 <Route path='/animais' element={<Animais />} />

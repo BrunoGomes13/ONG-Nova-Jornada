@@ -89,10 +89,12 @@ function Header() {
       </nav>
 
       <div className="acoes-usuario">
+        <Link to="/login">
         <button className="btn-login">
           <span className="material-symbols-outlined">login</span>
           Entrar
         </button>
+        </Link>
 
         <Link to="/animais">
           <button className="btn-adotar">
