@@ -1,35 +1,47 @@
-🐾 ONG Nova Jornada Animal - Proteção Animal
+# 🐾 ONG Nova Jornada Animal - Proteção Animal
 
 Sistema web desenvolvido para auxiliar ONGs de proteção animal no gerenciamento de adoções, divulgação de animais disponíveis e organização interna da instituição.
 
-📌 Sobre o Projeto
+---
 
-A crescente utilização da tecnologia da informação em projetos sociais tem proporcionado melhorias significativas na organização e eficiência de instituições sem fins lucrativos. Nesse contexto, organizações de proteção animal enfrentam desafios relacionados à:
+## 📌 Sobre o Projeto
 
-Administração de dados;
-Gerenciamento de processos de adoção;
-Comunicação com o público;
-Controle de usuários e segurança das informações.
+A crescente utilização da tecnologia da informação em projetos sociais tem proporcionado melhorias significativas na organização e eficiência de instituições sem fins lucrativos.
 
-Pensando nisso, foi desenvolvido o projeto ONG Nova Jornada Animal - Proteção Animal, uma plataforma web criada para otimizar o processo de adoção de animais e melhorar a gestão da ONG.
+Nesse contexto, organizações de proteção animal enfrentam desafios relacionados à:
+
+- Administração de dados;
+- Gerenciamento de processos de adoção;
+- Comunicação com o público;
+- Controle de usuários e segurança das informações.
+
+Pensando nisso, foi desenvolvido o projeto **ONG Nova Jornada Animal - Proteção Animal**, uma plataforma web criada para otimizar o processo de adoção de animais e melhorar a gestão da ONG.
 
 O sistema permite:
 
-Divulgação de animais disponíveis para adoção;
-Cadastro e autenticação de usuários;
-Maior controle das adoções;
-Organização das informações da ONG;
-Mais segurança e rastreabilidade nas interações realizadas na plataforma.
+- Divulgação de animais disponíveis para adoção;
+- Cadastro e autenticação de usuários;
+- Maior controle das adoções;
+- Organização das informações da ONG;
+- Mais segurança e rastreabilidade nas interações realizadas na plataforma.
 
 Com a implementação da plataforma, espera-se tornar o processo de adoção mais seguro, eficiente e acessível tanto para a ONG quanto para a sociedade.
 
-🚀 Tecnologias Utilizadas
-React.js
-JavaScript
-HTML5
-CSS3
-React Router DOM
-📂 Estrutura do Projeto
+---
+
+# 🚀 Tecnologias Utilizadas
+
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- React Router DOM
+
+---
+
+# 📂 Estrutura do Projeto
+
+```bash
 ONG-Nova-Jornada/
 │
 ├── public/
@@ -54,7 +66,6 @@ ONG-Nova-Jornada/
 ├── package.json
 └── README.md
 ⚙️ Funcionalidades
-
 ✅ Página inicial da ONG
 ✅ Página de animais disponíveis para adoção
 ✅ Página sobre a ONG
@@ -65,10 +76,9 @@ ONG-Nova-Jornada/
 ✅ Sistema de login/autenticação
 ✅ Navegação entre páginas com React Router
 ✅ Interface moderna e responsiva
-
 🔐 Segurança do Sistema
 
-O sistema conta com funcionalidades de:
+O sistema contém funcionalidades de:
 
 Cadastro de usuários;
 Login e autenticação;
@@ -85,7 +95,7 @@ git clone URL_DO_REPOSITORIO
 
 Abra a pasta:
 
- cd ONG-Nova-Jornada
+ONG-Nova-Jornada
 3️⃣ Selecione a pasta do projeto no terminal
 
 Antes de iniciar o sistema, certifique-se de que o terminal esteja dentro da pasta da ONG:
@@ -120,4 +130,4 @@ Projeto desenvolvido para fins acadêmicos e sociais utilizando React.js.
 
 🐶 ONG Nova Jornada Animal
 
-“Transformando vidas através do cuidado e da adoção responsável.”
+“Transformando vidas através do cuidado e da adoção responsável.”doção responsável.”
