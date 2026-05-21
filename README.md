@@ -4,10 +4,10 @@ Sistema web desenvolvido para auxiliar ONGs de proteção animal no gerenciament
 
 ---
 ## 👨‍💻 Integrantes do Grupo
-Alan Bezerra Chagas
-Bruno Gomes de Albuquerque Costa
-Daniel Tavares de Almeida
-Ivys Oliveira Dantas
+- Alan Bezerra Chagas
+- Bruno Gomes de Albuquerque Costa
+- Daniel Tavares de Almeida
+- Ivys Oliveira Dantas
 ## 📌 Sobre o Projeto
 
 A crescente utilização da tecnologia da informação em projetos sociais tem proporcionado melhorias significativas na organização e eficiência de instituições sem fins lucrativos.
