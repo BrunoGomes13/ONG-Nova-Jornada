@@ -1,15 +1,19 @@
 import "./QuemSomos.css";
 
+// Importa os componentes reutilizáveis do projeto
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
+// Importa os ícones da biblioteca lucide-react
 import { Target, Eye, HeartHandshake } from "lucide-react";
 
+// Importa as imagens utilizadas na página
 import pessoaAnimal from "../../assets/projects/card-1.jpg";
 import criancasAnimal from "../../assets/projects/card-2.jpg";
 
+// Função principal da página Quem Somos
 function QuemSomos() {
-  return (
+  return (  // Estrutura visual da página
     <>
       <Header />
 
@@ -46,6 +50,7 @@ function QuemSomos() {
           </div>
         </div>
 
+        // Container dos cards informativos 
         <div className="cards-container">
           <div className="info-card">
             <div className="icon blue">
@@ -93,4 +98,5 @@ function QuemSomos() {
   );
 }
 
+// Exporta o componente para ser utilizado em outras partes do projeto
 export default QuemSomos;
