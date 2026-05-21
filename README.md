@@ -76,40 +76,27 @@ ONG-Nova-Jornada/
 ✅ Sistema de login/autenticação
 ✅ Navegação entre páginas com React Router
 ✅ Interface moderna e responsiva
-🔐 Segurança do Sistema
 
-O sistema contém funcionalidades de:
-
-Cadastro de usuários;
-Login e autenticação;
-Controle de acesso;
-Identificação de usuários;
-Segurança no processo de adoção.
 
 Esses recursos ajudam a garantir maior confiabilidade e organização para a ONG e para os adotantes.
 
 💻 Como Executar o Projeto
 1️⃣ Clone o repositório
-git clone URL_DO_REPOSITORIO
+  git clone URL_DO_REPOSITORIO
+
 2️⃣ Abra o projeto no VS Code
+  Abra a pasta: ONG-Nova-Jornada
 
-Abra a pasta:
-
-ONG-Nova-Jornada
 3️⃣ Selecione a pasta do projeto no terminal
+  Antes de iniciar o sistema, certifique-se de que o terminal esteja dentro da pasta da ONG:
+  cd ONG-Nova-Jornada
 
-Antes de iniciar o sistema, certifique-se de que o terminal esteja dentro da pasta da ONG:
-
-cd ONG-Nova-Jornada
 4️⃣ Instale as dependências
-
 Execute o comando:
-
 npm install
+
 5️⃣ Inicie o projeto
-
 Após instalar as dependências, execute:
-
 npm start
 🌐 Acesso ao Sistema
 
@@ -124,8 +111,8 @@ O processo de adoção mais organizado;
 A divulgação dos animais mais eficiente;
 A comunicação com adotantes mais segura;
 A gestão interna da ONG mais prática e moderna.
-👨‍💻 Desenvolvedor
 
+👨‍💻 Desenvolvedor
 Projeto desenvolvido para fins acadêmicos e sociais utilizando React.js.
 
 🐶 ONG Nova Jornada Animal
