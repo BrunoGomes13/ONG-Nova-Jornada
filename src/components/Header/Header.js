@@ -29,8 +29,7 @@ function Header() {
   return (
     <header className={`cabecalho ${scrollAtivo ? "scroll" : ""}`}>
       <div className="logo">
-        <span className="material-symbols-outlined">pets</span>
-
+        <Link to="/"><span className="material-symbols-outlined">pets</span></Link>
         <div>
           <span>ONG Nova Jornada Animal</span>
           <p>Proteção animal</p>

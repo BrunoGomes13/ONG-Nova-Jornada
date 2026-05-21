@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+🐾 ONG Nova Jornada Animal - Proteção Animal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sistema web desenvolvido para auxiliar ONGs de proteção animal no gerenciamento de adoções, divulgação de animais disponíveis e organização interna da instituição.
 
-## Available Scripts
+📌 Sobre o Projeto
 
-In the project directory, you can run:
+A crescente utilização da tecnologia da informação em projetos sociais tem proporcionado melhorias significativas na organização e eficiência de instituições sem fins lucrativos. Nesse contexto, organizações de proteção animal enfrentam desafios relacionados à:
 
-### `npm start`
+Administração de dados;
+Gerenciamento de processos de adoção;
+Comunicação com o público;
+Controle de usuários e segurança das informações.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Pensando nisso, foi desenvolvido o projeto ONG Nova Jornada Animal - Proteção Animal, uma plataforma web criada para otimizar o processo de adoção de animais e melhorar a gestão da ONG.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O sistema permite:
 
-### `npm test`
+Divulgação de animais disponíveis para adoção;
+Cadastro e autenticação de usuários;
+Maior controle das adoções;
+Organização das informações da ONG;
+Mais segurança e rastreabilidade nas interações realizadas na plataforma.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Com a implementação da plataforma, espera-se tornar o processo de adoção mais seguro, eficiente e acessível tanto para a ONG quanto para a sociedade.
 
-### `npm run build`
+🚀 Tecnologias Utilizadas
+React.js
+JavaScript
+HTML5
+CSS3
+React Router DOM
+📂 Estrutura do Projeto
+ONG-Nova-Jornada/
+│
+├── public/
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── data/
+│   ├── pages/
+│   │   ├── Animais/
+│   │   ├── Contato/
+│   │   ├── Home/
+│   │   ├── Projetos/
+│   │   ├── QuemSomos/
+│   │   └── Relatos/
+│   │
+│   ├── routes/
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+│
+├── package.json
+└── README.md
+⚙️ Funcionalidades
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Página inicial da ONG
+✅ Página de animais disponíveis para adoção
+✅ Página sobre a ONG
+✅ Página de projetos sociais
+✅ Página de contato
+✅ Relatos e histórias de adoção
+✅ Sistema de cadastro de usuários
+✅ Sistema de login/autenticação
+✅ Navegação entre páginas com React Router
+✅ Interface moderna e responsiva
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🔐 Segurança do Sistema
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+O sistema conta com funcionalidades de:
 
-### `npm run eject`
+Cadastro de usuários;
+Login e autenticação;
+Controle de acesso;
+Identificação de usuários;
+Segurança no processo de adoção.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Esses recursos ajudam a garantir maior confiabilidade e organização para a ONG e para os adotantes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+💻 Como Executar o Projeto
+1️⃣ Clone o repositório
+git clone URL_DO_REPOSITORIO
+2️⃣ Abra o projeto no VS Code
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Abra a pasta:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ cd ONG-Nova-Jornada
+3️⃣ Selecione a pasta do projeto no terminal
 
-## Learn More
+Antes de iniciar o sistema, certifique-se de que o terminal esteja dentro da pasta da ONG:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd ONG-Nova-Jornada
+4️⃣ Instale as dependências
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Execute o comando:
 
-### Code Splitting
+npm install
+5️⃣ Inicie o projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Após instalar as dependências, execute:
 
-### Analyzing the Bundle Size
+npm start
+🌐 Acesso ao Sistema
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Após iniciar o projeto, o sistema abrirá automaticamente no navegador através do endereço:
 
-### Making a Progressive Web App
+http://localhost:3000
+🎯 Objetivo do Projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+O principal objetivo do sistema é utilizar a tecnologia para auxiliar ONGs de proteção animal, tornando:
 
-### Advanced Configuration
+O processo de adoção mais organizado;
+A divulgação dos animais mais eficiente;
+A comunicação com adotantes mais segura;
+A gestão interna da ONG mais prática e moderna.
+👨‍💻 Desenvolvedor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Projeto desenvolvido para fins acadêmicos e sociais utilizando React.js.
 
-### Deployment
+🐶 ONG Nova Jornada Animal
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+“Transformando vidas através do cuidado e da adoção responsável.”
