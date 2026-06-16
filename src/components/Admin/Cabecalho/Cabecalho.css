@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+
+/* ── Variáveis do cabeçalho ── */
+:root {
+  --cabecalho-altura: 70px;
+  --cabecalho-fundo: #13161f;
+  --cabecalho-borda: rgba(255, 255, 255, 0.06);
+  --cabecalho-texto-principal: #ffffff;
+  --cabecalho-texto-secundario: rgba(255, 255, 255, 0.45);
+  --cabecalho-input-fundo: rgba(255, 255, 255, 0.05);
+  --cabecalho-input-borda: rgba(255, 255, 255, 0.08);
+  --cabecalho-input-foco: rgba(255, 107, 53, 0.4);
+  --cabecalho-botao-fundo: rgba(255, 255, 255, 0.06);
+  --cabecalho-botao-hover: rgba(255, 255, 255, 0.1);
+  --cabecalho-avatar-fundo: linear-gradient(135deg, #ff6b35, #f7931e);
+  --cabecalho-notif-cor: #ff6b35;
+}
+
+/* ── Contêiner do cabeçalho ── */
+.cabecalho {
+  height: var(--cabecalho-altura);
+  /* background: var(--cabecalho-fundo); */
+  border-bottom: 1px solid var(--cabecalho-borda);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  gap: 20px;
+}
+
+/* ── Lado esquerdo: título da página ── */
+.cabecalho__titulo-pagina {
+  font-family: var(--fonte-principal);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cabecalho-texto-principal);
+  white-space: nowrap;
+}
+
+/* ── Campo de pesquisa ── */
+.cabecalho__campo-pesquisa {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cabecalho-input-fundo);
+  border: 1px solid var(--cabecalho-input-borda);
+  border-radius: 10px;
+  padding: 0 14px;
+  height: 40px;
+  width: 280px;
+  transition: border-color 0.2s ease;
+}
+
+.cabecalho__campo-pesquisa:focus-within {
+  border-color: var(--cabecalho-input-foco);
+}
+
+.cabecalho__icone-pesquisa {
+  font-size: 14px;
+  opacity: 0.45;
+  flex-shrink: 0;
+}
+
+.cabecalho__input-pesquisa {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--cabecalho-texto-principal);
+  font-family: var(--fonte-principal);
+  font-size: 13px;
+  width: 100%;
+}
+
+.cabecalho__input-pesquisa::placeholder {
+  color: var(--cabecalho-texto-secundario);
+}
+
+/* ── Lado direito: ações ── */
+.cabecalho__acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+/* ── Botão de notificações ── */
+.cabecalho__botao-notificacoes {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: var(--cabecalho-botao-fundo);
+  border: 1px solid var(--cabecalho-borda);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 17px;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cabecalho__botao-notificacoes:hover {
+  background: var(--cabecalho-botao-hover);
+}
+
+.cabecalho__contador-notificacoes {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  background: var(--cabecalho-notif-cor);
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-principal);
+  border: 2px solid var(--cabecalho-fundo);
+}
+
+/* ── Divisor vertical ── */
+.cabecalho__divisor {
+  width: 1px;
+  height: 28px;
+  background: var(--cabecalho-borda);
+  flex-shrink: 0;
+}
+
+/* ── Perfil do administrador ── */
+.cabecalho__perfil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.cabecalho__avatar {
+  width: 38px;
+  height: 38px;
+  background: var(--cabecalho-avatar-fundo);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--fonte-principal);
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(255,107,53,0.3);
+}
+
+.cabecalho__info-usuario {
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalho__nome-usuario {
+  font-family: var(--fonte-principal);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cabecalho-texto-principal);
+  line-height: 1.3;
+}
+
+.cabecalho__email-usuario {
+  font-family: var(--fonte-principal);
+  font-size: 11px;
+  color: var(--cabecalho-texto-secundario);
+  line-height: 1.3;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 768px) {
+  .cabecalho__campo-pesquisa {
+    display: none;
+  }
+
+  .cabecalho__info-usuario {
+    display: none;
+  }
+}

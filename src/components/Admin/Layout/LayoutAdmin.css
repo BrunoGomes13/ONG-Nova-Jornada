@@ -1,0 +1,40 @@
+/* ── Variáveis do layout administrativo ── */
+:root {
+  --layout-fundo-principal: #0d0f16;
+  --layout-largura-barra: 260px;
+  --layout-altura-cabecalho: 70px;
+}
+
+/* ── Contêiner raiz do painel ── */
+.layout-admin {
+  display: flex;
+  min-height: 100vh;
+  background: var(--layout-fundo-principal);
+}
+
+/* ── Área de conteúdo principal (ao lado da barra lateral) ── */
+.layout-admin__conteudo-principal {
+  margin-left: var(--layout-largura-barra);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Área onde as páginas são renderizadas ── */
+.layout-admin__area-pagina {
+  flex: 1;
+  padding: 28px 32px;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 768px) {
+  .layout-admin__conteudo-principal {
+    margin-left: 0;
+  }
+
+  .layout-admin__area-pagina {
+    padding: 20px 16px;
+  }
+}

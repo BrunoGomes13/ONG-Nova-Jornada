@@ -1,0 +1,148 @@
+/* ── Variáveis da página dashboard ── */
+:root {
+  --dashboard-fundo-tabela: #13161f;
+  --dashboard-borda-tabela: rgba(255, 255, 255, 0.06);
+  --dashboard-texto-cabecalho: rgba(255, 255, 255, 0.35);
+  --dashboard-texto-linha: rgba(255, 255, 255, 0.85);
+  --dashboard-linha-hover: rgba(255, 255, 255, 0.03);
+  --dashboard-borda-linha: rgba(255, 255, 255, 0.04);
+  --dashboard-tag-disponivel-cor: #4ade80;
+  --dashboard-tag-disponivel-fundo: rgba(74, 222, 128, 0.1);
+  --dashboard-tag-adotado-cor: #fb923c;
+  --dashboard-tag-adotado-fundo: rgba(251, 146, 60, 0.1);
+  --dashboard-fonte: 'Sora', sans-serif;
+}
+
+/* ── Contêiner geral da página ── */
+.pagina-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Saudação do topo ── */
+.pagina-dashboard__saudacao {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pagina-dashboard__saudacao-titulo {
+  font-family: var(--dashboard-fonte);
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pagina-dashboard__saudacao-subtitulo {
+  font-family: var(--dashboard-fonte);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Grade de cartões ── */
+.pagina-dashboard__grade-cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ── Seção de tabela ── */
+.pagina-dashboard__secao-tabela {
+  background: var(--dashboard-fundo-tabela);
+  border: 1px solid var(--dashboard-borda-tabela);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.pagina-dashboard__cabecalho-secao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--dashboard-borda-tabela);
+}
+
+.pagina-dashboard__titulo-secao {
+  font-family: var(--dashboard-fonte);
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.pagina-dashboard__link-ver-todos {
+  font-family: var(--dashboard-fonte);
+  font-size: 12px;
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.pagina-dashboard__link-ver-todos:hover {
+  opacity: 0.75;
+}
+
+/* ── Tabela de animais recentes ── */
+.pagina-dashboard__tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pagina-dashboard__tabela thead tr th {
+  font-family: var(--dashboard-fonte);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dashboard-texto-cabecalho);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 12px 24px;
+  text-align: left;
+}
+
+.pagina-dashboard__tabela tbody tr {
+  border-top: 1px solid var(--dashboard-borda-linha);
+  transition: background 0.15s ease;
+}
+
+.pagina-dashboard__tabela tbody tr:hover {
+  background: var(--dashboard-linha-hover);
+}
+
+.pagina-dashboard__tabela tbody tr td {
+  font-family: var(--dashboard-fonte);
+  font-size: 13px;
+  color: var(--dashboard-texto-linha);
+  padding: 14px 24px;
+}
+
+/* ── Tags de status ── */
+.pagina-dashboard__tag-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-family: var(--dashboard-fonte);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.pagina-dashboard__tag-status--disponivel {
+  color: var(--dashboard-tag-disponivel-cor);
+  background: var(--dashboard-tag-disponivel-fundo);
+}
+
+.pagina-dashboard__tag-status--adotado {
+  color: var(--dashboard-tag-adotado-cor);
+  background: var(--dashboard-tag-adotado-fundo);
+}
+
+/* ── Estado de carregamento ── */
+.pagina-dashboard__carregando {
+  text-align: center;
+  padding: 40px;
+  font-family: var(--dashboard-fonte);
+  color: rgba(255,255,255,0.3);
+  font-size: 13px;
+}

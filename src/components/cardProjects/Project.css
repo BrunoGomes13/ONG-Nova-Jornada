@@ -1,14 +1,14 @@
 #card-project {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     padding: 20px;
 }
-.card{
-    width: 450px;
+#card-project.card{
     border-radius: 18px;
     transition: .3s ease;
     cursor: pointer;
+    height: 100px;
 }
 .card-conteudo{
     display: flex;
@@ -18,9 +18,8 @@
     border-radius: 0 0 18px 18px;
     padding: var(--p-20);
 }
-.card img{
+#card-project img{
     width: 100%;
-    height: 200px;
     border-radius: 18px 18px 0 0; 
     object-fit: cover;
     display: block;

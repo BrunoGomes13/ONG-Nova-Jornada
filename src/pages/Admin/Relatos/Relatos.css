@@ -1,0 +1,73 @@
+/* ── Estilos compartilhados para Usuários, Relatos e Contatos ── */
+:root {
+  --tabela-simples-fundo: #13161f;
+  --tabela-simples-borda: rgba(255,255,255,0.06);
+  --tabela-simples-texto: #ffffff;
+  --tabela-simples-texto-sec: rgba(255,255,255,0.45);
+  --tabela-simples-perigo-cor: #f87171;
+  --tabela-simples-perigo-fundo: rgba(248,113,113,0.12);
+  --tabela-simples-perigo-hover: rgba(248,113,113,0.22);
+}
+
+.pagina-tabela-simples { display: flex; flex-direction: column; gap: 24px; }
+
+.pagina-tabela-simples__topo {
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.pagina-tabela-simples__titulo {
+  font-family: var(--fonte-principal); font-size: 18px;
+  font-weight: 700; color: var(--tabela-simples-texto);
+}
+button{
+  color: var(--tabela-simples-fundo);
+  background-color: var(--tabela-simples-texto);
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+.pagina-tabela-simples__wrapper {
+  background: var(--tabela-simples-fundo);
+  border: 1px solid var(--tabela-simples-borda);
+  border-radius: 16px; overflow: hidden;
+}
+
+.pagina-tabela-simples__tabela { width: 100%; border-collapse: collapse; }
+
+.pagina-tabela-simples__tabela thead th {
+  font-family: var(--fonte-principal); font-size: 11px; font-weight: 600;
+  color: var(--tabela-simples-texto-sec); text-transform: uppercase;
+  letter-spacing: 0.08em; padding: 14px 20px; text-align: left;
+  border-bottom: 1px solid var(--tabela-simples-borda);
+}
+
+.pagina-tabela-simples__tabela tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.15s;
+}
+.pagina-tabela-simples__tabela tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+.pagina-tabela-simples__tabela tbody td {
+  font-family: var(--fonte-principal); font-size: 13px;
+  color: var(--tabela-simples-texto); padding: 14px 20px;
+}
+
+.pagina-tabela-simples__tag {
+  display: inline-flex; padding: 3px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 600; font-family: var(--fonte-principal);
+}
+.pagina-tabela-simples__tag--admin   { color: #ff6b35; background: rgba(255,107,53,0.12); }
+.pagina-tabela-simples__tag--cliente { color: #60a5fa; background: rgba(96,165,250,0.12); }
+.pagina-tabela-simples__tag--novo    { color: #4ade80; background: rgba(74,222,128,0.1); }
+.pagina-tabela-simples__tag--lido    { color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.06); }
+
+.pagina-tabela-simples__botao-deletar {
+  padding: 6px 12px; border-radius: 8px; font-size: 12px;
+  font-weight: 600; font-family: var(--fonte-principal); cursor: pointer;
+  border: none; background: var(--tabela-simples-perigo-fundo);
+  color: var(--tabela-simples-perigo-cor); transition: background 0.2s;
+}
+.pagina-tabela-simples__botao-deletar:hover { background: var(--tabela-simples-perigo-hover); }
+
+.pagina-tabela-simples__vazio {
+  text-align: center; padding: 40px;
+  font-family: var(--fonte-principal); color: rgba(255,255,255,0.3); font-size: 13px;
+}

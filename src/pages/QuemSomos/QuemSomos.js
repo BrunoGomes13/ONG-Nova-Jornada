@@ -49,8 +49,7 @@ function QuemSomos() {
             />
           </div>
         </div>
-
-        // Container dos cards informativos 
+ 
         <div className="cards-container">
           <div className="info-card">
             <div className="icon blue">

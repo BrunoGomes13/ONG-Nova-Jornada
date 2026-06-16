@@ -1,93 +1,89 @@
 import "./Relatos.css";
-
-// Importa os componentes reutilizáveis do projeto
+import { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-
-// Importa o componente responsável por exibir cada card de relato
 import CardRelato from "../../components/cardRelatos/CardRelato";
 
-// Função principal da página Relatos
+/* ── URL base da API ── */
+const URL_API = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+
+/* ── Página de Relatos de Adoção ── */
 function Relatos() {
+  const [relatos, setRelatos]       = useState([]);
+  const [carregando, setCarregando] = useState(true);
+  const [erro, setErro]             = useState("");
 
-    // Array contendo os dados dos relatos
-    // Cada objeto representa um depoimento de adoção
-    const relatos = [
-        {
-            id: 1,
-            nome: "Maria Clara",
-            animal: "Thor",
-            relato:
-                "Adotar o Thor foi uma das melhores decisões da minha vida.",
-            imagem:
-                "https://images.unsplash.com/photo-1517849845537-4d257902454a"
-        },
+  /* ── Busca relatos da API ao montar ── */
+  useEffect(() => {
+    const buscarRelatos = async () => {
+      try {
+        setCarregando(true);
+        const resposta = await fetch(`${URL_API}/relatos`);
+        const dados    = await resposta.json();
 
-        {
-            id: 2,
-            nome: "João Pedro",
-            animal: "Luna",
-            relato:
-                "A Luna chegou muito tímida, mas hoje é extremamente carinhosa.",
-            imagem:
-                "https://images.unsplash.com/photo-1518791841217-8f162f1e1131"
-        },
-
-        {
-            id: 3,
-            nome: "Ana Beatriz",
-            animal: "Mel",
-            relato:
-                "A Mel trouxe felicidade para toda a casa.",
-            imagem:
-                "https://images.unsplash.com/photo-1548199973-03cce0bbc87b"
+        if (Array.isArray(dados)) {
+          setRelatos(dados);
+        } else {
+          setRelatos([]);
         }
-    ];
+      } catch (erro) {
+        console.error("Erro ao buscar relatos:", erro);
+        setErro("Não foi possível carregar os relatos.");
+      } finally {
+        setCarregando(false);
+      }
+    };
 
-    // Estrutura visual da página
-    return (
-        <>
-            <Header />
+    buscarRelatos();
+  }, []);
 
-            <div className="relatos-container">
+  return (
+    <>
+      <Header />
 
-                <section className="relatos-header">
+      <div className="relatos-container">
+        <section className="relatos-header">
+          <h1>Relatos de Adoção</h1>
+          <p>
+            Conheça histórias emocionantes de pessoas que encontraram
+            um novo melhor amigo através da adoção.
+          </p>
+        </section>
 
-                    <h1>Relatos de Adoção</h1>
+        <section className="relatos-cards">
+          {/* ── Carregando ── */}
+          {carregando && (
+            <p style={{ textAlign: "center", opacity: 0.5 }}>Carregando relatos...</p>
+          )}
 
-                    <p>
-                        Conheça histórias emocionantes de pessoas que encontraram
-                        um novo melhor amigo através da adoção.
-                    </p>
+          {/* ── Erro ── */}
+          {erro && (
+            <p style={{ textAlign: "center", color: "#f87171" }}>{erro}</p>
+          )}
 
-                </section>
+          {/* ── Sem relatos ── */}
+          {!carregando && !erro && relatos.length === 0 && (
+            <p style={{ textAlign: "center", opacity: 0.5 }}>
+              Nenhum relato cadastrado ainda.
+            </p>
+          )}
 
-                // Seção onde os cards de relatos serão exibidos
-                <section className="relatos-cards">
+          {/* ── Lista de relatos vindos da API ── */}
+          {relatos.map((relato) => (
+            <CardRelato
+              key={relato._id}
+              nome={relato.nome}
+              animal={relato.animal}
+              relato={relato.relato}
+              imagem={relato.imagem}
+            />
+          ))}
+        </section>
+      </div>
 
-                    /* O método map percorre o array "relatos"
-                    e cria um CardRelato para cada item */
-
-                    {relatos.map((relato) => (
-
-                        <CardRelato
-                            key={relato.id}
-                            nome={relato.nome}  // Props enviadas para o componente CardRelato
-                            animal={relato.animal}
-                            relato={relato.relato}
-                            imagem={relato.imagem}
-                        />
-
-                    ))}
-
-                </section>
-
-            </div>
-
-            <Footer />
-        </>
-    );
+      <Footer />
+    </>
+  );
 }
 
-// Exporta o componente para ser utilizado em outras partes do projeto
 export default Relatos;

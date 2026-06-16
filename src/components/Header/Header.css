@@ -12,9 +12,6 @@
     --fs: 16px;
     --linear-gdt: linear-gradient(135deg, #00c6ff, #00d084);
 }
-body{
-     padding-top: 80px;
-}
 .cabecalho {
     display: flex;
     align-items: center;
@@ -249,7 +246,7 @@ button {
     .btn-login {
         border: 1px solid #dcdcdc;
     }
-    body{
+    /* body{
         padding-top: 100px;
-    }
+    } */
 }

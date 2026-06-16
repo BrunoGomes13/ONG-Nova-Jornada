@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/home/Home';
 import QuemSomos from '../pages/QuemSomos/QuemSomos';
 import Projetos from '../pages/Projetos/Projetos';
@@ -6,11 +6,12 @@ import Animais from '../pages/Animais/Animais';
 import DetalheAnimal from '../components/cardAnimals/DetalheAnimal';
 import Relatos from '../pages/Relatos/Relatos';
 import Contato from '../pages/Contato/Contato';
-import Login from'../components/Login/Login';
-
+import Login from '../components/Login/Login';
+import AdminRoutes from "./AdminRoutes";
 function AppRoutes() {
     return (
         <BrowserRouter>
+            <AdminRoutes />
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/login' element={<Login />} />

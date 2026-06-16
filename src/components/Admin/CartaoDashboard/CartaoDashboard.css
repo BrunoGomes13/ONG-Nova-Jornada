@@ -1,0 +1,135 @@
+/* ── Variáveis do cartão ── */
+:root {
+  --cartao-fundo: #13161f;
+  --cartao-borda: rgba(255, 255, 255, 0.06);
+  --cartao-raio: 16px;
+  --cartao-sombra: 0 4px 24px rgba(0, 0, 0, 0.25);
+  --cartao-texto-valor: #ffffff;
+  --cartao-texto-rotulo: rgba(255, 255, 255, 0.45);
+  --cartao-texto-variacao-positiva: #4ade80;
+  --cartao-texto-variacao-negativa: #f87171;
+}
+
+/* ── Contêiner do cartão ── */
+.cartao-dashboard {
+  background: var(--cartao-fundo);
+  border: 1px solid var(--cartao-borda);
+  border-radius: var(--cartao-raio);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--cartao-sombra);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cartao-dashboard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+
+/* ── Linha superior: ícone + variação ── */
+.cartao-dashboard__topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* ── Ícone do cartão ── */
+.cartao-dashboard__icone-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+/* ── Variações de cor por tipo ── */
+.cartao-dashboard__icone-wrapper--laranja {
+  background: rgba(255, 107, 53, 0.15);
+}
+.cartao-dashboard__icone-wrapper--verde {
+  background: rgba(74, 222, 128, 0.12);
+}
+.cartao-dashboard__icone-wrapper--azul {
+  background: rgba(96, 165, 250, 0.12);
+}
+.cartao-dashboard__icone-wrapper--roxo {
+  background: rgba(167, 139, 250, 0.12);
+}
+.cartao-dashboard__icone-wrapper--amarelo {
+  background: rgba(251, 191, 36, 0.12);
+}
+
+/* ── Tag de variação percentual ── */
+.cartao-dashboard__variacao {
+  font-family: var(--fonte-principal);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+.cartao-dashboard__variacao--positiva {
+  color: var(--cartao-texto-variacao-positiva);
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.cartao-dashboard__variacao--negativa {
+  color: var(--cartao-texto-variacao-negativa);
+  background: rgba(248, 113, 113, 0.1);
+}
+
+/* ── Corpo: valor + rótulo ── */
+.cartao-dashboard__corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cartao-dashboard__valor {
+  font-family: var(--fonte-principal);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cartao-texto-valor);
+  line-height: 1;
+}
+
+.cartao-dashboard__rotulo {
+  font-family: var(--fonte-principal);
+  font-size: 13px;
+  color: var(--cartao-texto-rotulo);
+  font-weight: 400;
+}
+
+/* ── Barra decorativa inferior ── */
+.cartao-dashboard__barra-decorativa {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 0 0 var(--cartao-raio) var(--cartao-raio);
+  opacity: 0.6;
+}
+
+.cartao-dashboard__barra-decorativa--laranja {
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+}
+.cartao-dashboard__barra-decorativa--verde {
+  background: linear-gradient(90deg, #4ade80, #22d3ee);
+}
+.cartao-dashboard__barra-decorativa--azul {
+  background: linear-gradient(90deg, #60a5fa, #818cf8);
+}
+.cartao-dashboard__barra-decorativa--roxo {
+  background: linear-gradient(90deg, #a78bfa, #ec4899);
+}
+.cartao-dashboard__barra-decorativa--amarelo {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+}
