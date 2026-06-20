@@ -1,5 +1,5 @@
 /* ── Variáveis da página de animais ── */
-:root {
+.layout-admin {
   --animais-fundo-card: #13161f;
   --animais-borda: rgba(255, 255, 255, 0.06);
   --animais-texto: #ffffff;

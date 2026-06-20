@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
 
 /* ── Variáveis do cabeçalho ── */
-:root {
+.layout-admin {
   --cabecalho-altura: 70px;
   --cabecalho-fundo: #13161f;
   --cabecalho-borda: rgba(255, 255, 255, 0.06);
@@ -17,9 +17,9 @@
 }
 
 /* ── Contêiner do cabeçalho ── */
-.cabecalho {
+.admin-cabecalho {
   height: var(--cabecalho-altura);
-  /* background: var(--cabecalho-fundo); */
+  background: var(--cabecalho-fundo);
   border-bottom: 1px solid var(--cabecalho-borda);
   display: flex;
   align-items: center;
@@ -32,7 +32,7 @@
 }
 
 /* ── Lado esquerdo: título da página ── */
-.cabecalho__titulo-pagina {
+.admin-cabecalho__titulo-pagina {
   font-family: var(--fonte-principal);
   font-size: 16px;
   font-weight: 600;
@@ -41,7 +41,7 @@
 }
 
 /* ── Campo de pesquisa ── */
-.cabecalho__campo-pesquisa {
+.admin-cabecalho__campo-pesquisa {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -54,17 +54,17 @@
   transition: border-color 0.2s ease;
 }
 
-.cabecalho__campo-pesquisa:focus-within {
+.admin-cabecalho__campo-pesquisa:focus-within {
   border-color: var(--cabecalho-input-foco);
 }
 
-.cabecalho__icone-pesquisa {
+.admin-cabecalho__icone-pesquisa {
   font-size: 14px;
   opacity: 0.45;
   flex-shrink: 0;
 }
 
-.cabecalho__input-pesquisa {
+.admin-cabecalho__input-pesquisa {
   background: none;
   border: none;
   outline: none;
@@ -74,12 +74,12 @@
   width: 100%;
 }
 
-.cabecalho__input-pesquisa::placeholder {
+.admin-cabecalho__input-pesquisa::placeholder {
   color: var(--cabecalho-texto-secundario);
 }
 
 /* ── Lado direito: ações ── */
-.cabecalho__acoes {
+.admin-cabecalho__acoes {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -87,7 +87,7 @@
 }
 
 /* ── Botão de notificações ── */
-.cabecalho__botao-notificacoes {
+.admin-cabecalho__botao-notificacoes {
   position: relative;
   width: 40px;
   height: 40px;
@@ -103,11 +103,11 @@
   flex-shrink: 0;
 }
 
-.cabecalho__botao-notificacoes:hover {
+.admin-cabecalho__botao-notificacoes:hover {
   background: var(--cabecalho-botao-hover);
 }
 
-.cabecalho__contador-notificacoes {
+.admin-cabecalho__contador-notificacoes {
   position: absolute;
   top: -4px;
   right: -4px;
@@ -126,7 +126,7 @@
 }
 
 /* ── Divisor vertical ── */
-.cabecalho__divisor {
+.admin-cabecalho__divisor {
   width: 1px;
   height: 28px;
   background: var(--cabecalho-borda);
@@ -134,14 +134,14 @@
 }
 
 /* ── Perfil do administrador ── */
-.cabecalho__perfil {
+.admin-cabecalho__perfil {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
 }
 
-.cabecalho__avatar {
+.admin-cabecalho__avatar {
   width: 38px;
   height: 38px;
   background: var(--cabecalho-avatar-fundo);
@@ -157,12 +157,12 @@
   box-shadow: 0 3px 10px rgba(255,107,53,0.3);
 }
 
-.cabecalho__info-usuario {
+.admin-cabecalho__info-usuario {
   display: flex;
   flex-direction: column;
 }
 
-.cabecalho__nome-usuario {
+.admin-cabecalho__nome-usuario {
   font-family: var(--fonte-principal);
   font-size: 13px;
   font-weight: 600;
@@ -170,7 +170,7 @@
   line-height: 1.3;
 }
 
-.cabecalho__email-usuario {
+.admin-cabecalho__email-usuario {
   font-family: var(--fonte-principal);
   font-size: 11px;
   color: var(--cabecalho-texto-secundario);
@@ -179,11 +179,11 @@
 
 /* ── Responsivo ── */
 @media (max-width: 768px) {
-  .cabecalho__campo-pesquisa {
+  .admin-cabecalho__campo-pesquisa {
     display: none;
   }
 
-  .cabecalho__info-usuario {
+  .admin-cabecalho__info-usuario {
     display: none;
   }
 }

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { buscarMeuPerfil } from "../../../services/adminApi";
 import "./Cabecalho.css";
 
 /* ── Mapeamento de rotas para títulos de página ── */
@@ -15,11 +16,25 @@ const mapaRotulosPaginas = {
 const Cabecalho = () => {
   const localizacao = useLocation();
   const [textoPesquisa, setTextoPesquisa] = useState("");
+  const [admin, setAdmin] = useState(null);
 
-  /* ── Dados do usuário logado ── */
-  const usuarioLogado = JSON.parse(localStorage.getItem("usuario") || "{}");
-  const nomeUsuario   = usuarioLogado?.nome  || "Administrador";
-  const emailUsuario  = usuarioLogado?.email || "admin@novajornada.com";
+  /* ── Busca o admin real direto do backend, não do localStorage ──
+     Isso garante que o painel sempre mostre quem está realmente
+     autenticado como admin, e não o último usuário cadastrado.   ── */
+  useEffect(() => {
+    const carregarPerfil = async () => {
+      try {
+        const data = await buscarMeuPerfil();
+        if (data?.usuario) setAdmin(data.usuario);
+      } catch (erro) {
+        console.error("Erro ao buscar perfil do admin:", erro);
+      }
+    };
+    carregarPerfil();
+  }, []);
+
+  const nomeUsuario  = admin?.nome  || "Administrador";
+  const emailUsuario = admin?.email || "";
 
   /* ── Inicial do avatar ── */
   const inicialAvatar = nomeUsuario.charAt(0).toUpperCase();
@@ -28,16 +43,16 @@ const Cabecalho = () => {
   const tituloPagina = mapaRotulosPaginas[localizacao.pathname] || "Painel";
 
   return (
-    <header className="cabecalho">
+    <header className="admin-cabecalho">
       {/* ── Título da página atual ── */}
-      <h1 className="cabecalho__titulo-pagina">{tituloPagina}</h1>
+      <h1 className="admin-cabecalho__titulo-pagina">{tituloPagina}</h1>
 
       {/* ── Campo de pesquisa ── */}
-      <div className="cabecalho__campo-pesquisa">
-        <span className="cabecalho__icone-pesquisa">🔍</span>
+      <div className="admin-cabecalho__campo-pesquisa">
+        <span className="admin-cabecalho__icone-pesquisa">🔍</span>
         <input
           type="text"
-          className="cabecalho__input-pesquisa"
+          className="admin-cabecalho__input-pesquisa"
           placeholder="Pesquisar..."
           value={textoPesquisa}
           onChange={(e) => setTextoPesquisa(e.target.value)}
@@ -45,21 +60,16 @@ const Cabecalho = () => {
       </div>
 
       {/* ── Ações à direita ── */}
-      <div className="cabecalho__acoes">
-        {/* ── Notificações ── */}
-        <button className="cabecalho__botao-notificacoes" title="Notificações">
-          🔔
-          <span className="cabecalho__contador-notificacoes">3</span>
-        </button>
+      <div className="admin-cabecalho__acoes">
 
-        <div className="cabecalho__divisor" />
+        <div className="admin-cabecalho__divisor" />
 
-        {/* ── Perfil do administrador ── */}
-        <div className="cabecalho__perfil">
-          <div className="cabecalho__avatar">{inicialAvatar}</div>
-          <div className="cabecalho__info-usuario">
-            <span className="cabecalho__nome-usuario">{nomeUsuario}</span>
-            <span className="cabecalho__email-usuario">{emailUsuario}</span>
+        {/* ── Perfil do administrador (dados reais do backend) ── */}
+        <div className="admin-cabecalho__perfil">
+          <div className="admin-cabecalho__avatar">{inicialAvatar}</div>
+          <div className="admin-cabecalho__info-usuario">
+            <span className="admin-cabecalho__nome-usuario">{nomeUsuario}</span>
+            <span className="admin-cabecalho__email-usuario">{emailUsuario}</span>
           </div>
         </div>
       </div>

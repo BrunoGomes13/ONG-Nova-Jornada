@@ -1,0 +1,5 @@
+/* ── Compensa o Header fixo do site público ──
+   Aplicado SOMENTE nas páginas públicas, nunca no admin. ── */
+.layout-publico {
+  padding-top: 100px;
+}

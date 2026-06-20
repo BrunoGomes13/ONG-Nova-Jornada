@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
 
-/* ── Variáveis globais da barra lateral ── */
 :root {
-  --cor-fundo-barra: 13161f;
+  --cor-fundo-barra: #0f1117;
   --cor-fundo-item-ativo: rgba(255, 107, 53, 0.15);
   --cor-fundo-item-hover: rgba(255, 255, 255, 0.06);
-  --cor-texto-principal: #fff;
-  --cor-texto-secundario: #fff;
+  --cor-texto-principal: #ffffff;
+  --cor-texto-secundario: rgba(255, 255, 255, 0.5);
   --cor-texto-label: rgba(255, 255, 255, 0.25);
   --cor-destaque-laranja: #ff6b35;
   --cor-destaque-laranja-claro: #f7931e;
@@ -14,14 +13,39 @@
   --cor-erro: rgba(255, 80, 80, 0.7);
   --cor-erro-hover: #ff5050;
   --cor-erro-fundo: rgba(255, 80, 80, 0.08);
-  --sombra-icone-logo: 0 4px 15px rgba(255, 107, 53, 0.35);
-  --raio-borda-item: 10px;
-  --raio-borda-logo: 12px;
   --largura-barra: 260px;
   --fonte-principal: 'Sora', sans-serif;
 }
 
-/* ── Contêiner principal da barra lateral ── */
+/* ── Botão hamburguer — igual ao btn-hamburger do Header público ── */
+.barra-lateral__btn-hamburger {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 200;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #ffffff;
+}
+
+.barra-lateral__btn-hamburger .material-symbols-outlined {
+  font-size: 28px;
+}
+
+/* ── Overlay ── */
+.barra-lateral__overlay {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 98;
+  backdrop-filter: blur(2px);
+}
+
+/* ── Barra lateral ── */
 .barra-lateral {
   width: var(--largura-barra);
   min-height: 100vh;
@@ -32,12 +56,12 @@
   left: 0;
   top: 0;
   bottom: 0;
-  z-index: 100;
+  z-index: 99;
   border-right: 1px solid var(--cor-borda-sutil);
   transition: transform 0.3s ease;
 }
 
-/* ── Área do logo ── */
+/* ── Logo ── */
 .barra-lateral__logo {
   padding: 28px 24px 20px;
   border-bottom: 1px solid var(--cor-borda-sutil);
@@ -53,36 +77,28 @@
   width: 40px;
   height: 40px;
   background: linear-gradient(135deg, #00c6ff, #00d084);
-  border-radius: var(--raio-borda-logo);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
   flex-shrink: 0;
-  box-shadow: var(--sombra-icone-logo);
+  box-shadow: 0 4px 15px rgba(255,107,53,0.35);
 }
 
-.barra-lateral__logo-textos {
-  display: flex;
-  flex-direction: column;
-}
+.barra-lateral__logo-textos { display: flex; flex-direction: column; }
 
 .barra-lateral__logo-titulo {
   font-family: var(--fonte-principal);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 13px; font-weight: 700;
   color: var(--cor-texto-principal);
-  letter-spacing: 0.02em;
-  line-height: 1.2;
+  letter-spacing: 0.02em; line-height: 1.2;
 }
 
 .barra-lateral__logo-subtitulo {
   font-family: var(--fonte-principal);
-  font-size: 10px;
-  color: var(--cor-texto-label);
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 10px; color: var(--cor-texto-label);
+  font-weight: 400; text-transform: uppercase;
 }
 
 /* ── Navegação ── */
@@ -96,120 +112,88 @@
 
 .barra-lateral__rotulo-secao {
   font-family: var(--fonte-principal);
-  font-size: 9px;
-  font-weight: 600;
+  font-size: 9px; font-weight: 600;
   color: var(--cor-texto-label);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.12em; text-transform: uppercase;
   padding: 12px 12px 6px;
 }
 
-/* ── Item de menu (link) ── */
 .barra-lateral__link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 11px 14px;
-  border-radius: var(--raio-borda-item);
-  text-decoration: none;
-  color: var(--cor-texto-secundario);
-  font-family: var(--fonte-principal);
-  font-size: 13.5px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  position: relative;
-  cursor: pointer;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px; border-radius: 10px;
+  text-decoration: none; color: var(--cor-texto-secundario);
+  font-family: var(--fonte-principal); font-size: 13.5px; font-weight: 500;
+  transition: all 0.2s ease; position: relative;
+  cursor: pointer; border: none; background: none;
+  width: 100%; text-align: left;
 }
 
 .barra-lateral__link:hover {
-  color:var(--cor-texto-principal);
+  color: var(--cor-texto-principal);
+  transition: .3s ease;
   background: linear-gradient(135deg, #00c6ff, #00d084);
 }
 
 .barra-lateral__link--ativo {
   color: var(--cor-texto-principal) !important;
-  background: linear-gradient(135deg, #00c6ff, #00d084);
+  background: linear-gradient(135deg, #00c6ff, #00d084) !important;
+  opacity: 0.60;
 }
 
 .barra-lateral__link--ativo::before {
   content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
+  position: absolute; left: 0; top: 50%;
   transform: translateY(-50%);
-  width: 3px;
-  height: 60%;
+  width: 3px; height: 60%;
   background: linear-gradient(135deg, var(--cor-destaque-laranja), var(--cor-destaque-laranja-claro));
   border-radius: 0 4px 4px 0;
 }
 
 .barra-lateral__link-icone {
-  font-size: 17px;
-  width: 20px;
-  text-align: center;
-  flex-shrink: 0;
-  opacity: 0.8;
+  font-size: 17px; width: 20px;
+  text-align: center; flex-shrink: 0; opacity: 0.8;
 }
+.barra-lateral__link--ativo .barra-lateral__link-icone { opacity: 1; }
+.barra-lateral__link-texto { flex: 1; }
 
-.barra-lateral__link--ativo .barra-lateral__link-icone {
-  opacity: 1;
-}
-
-.barra-lateral__link-texto {
-  flex: 1;
-}
-
-.barra-lateral__link-contador {
-  margin-left: auto;
-  background: var(--cor-destaque-laranja);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 20px;
-  font-family: var(--fonte-principal);
-}
-
-/* ── Rodapé da barra ── */
+/* ── Rodapé ── */
 .barra-lateral__rodape {
   padding: 16px 12px;
   border-top: 1px solid var(--cor-borda-sutil);
 }
 
 .barra-lateral__botao-sair {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 11px 14px;
-  border-radius: var(--raio-borda-item);
-  color: var(--cor-erro);
-  font-family: var(--fonte-principal);
-  font-size: 13.5px;
-  font-weight: 500;
-  cursor: pointer;
-  background: none;
-  border: none;
-  width: 100%;
-  text-align: left;
-  transition: all 0.2s ease;
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px; border-radius: 10px;
+  color: var(--cor-erro); font-family: var(--fonte-principal);
+  font-size: 13.5px; font-weight: 500; cursor: pointer;
+  background: none; border: none; width: 100%;
+  text-align: left; transition: all 0.2s ease;
 }
-
 .barra-lateral__botao-sair:hover {
   color: var(--cor-erro-hover);
   background: var(--cor-erro-fundo);
 }
 
-/* ── Responsivo ── */
+/* ══════════════════════════════════════
+   RESPONSIVO
+══════════════════════════════════════ */
 @media (max-width: 768px) {
+  /* Mostra o botão hamburguer */
+  .barra-lateral__btn-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Esconde a barra por padrão */
   .barra-lateral {
     transform: translateX(-100%);
   }
 
+  /* Mostra ao abrir */
   .barra-lateral--aberta {
     transform: translateX(0);
+    box-shadow: 4px 0 32px rgba(0,0,0,0.5);
   }
 }

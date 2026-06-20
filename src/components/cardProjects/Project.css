@@ -5,16 +5,14 @@
     padding: 20px;
 }
 #card-project.card{
-    border-radius: 18px;
+    border-radius: 20px;
     transition: .3s ease;
     cursor: pointer;
-    height: 100px;
 }
 .card-conteudo{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border:1px solid #ddd;
     border-radius: 0 0 18px 18px;
     padding: var(--p-20);
 }
@@ -28,11 +26,16 @@
     font: bold;
     color:#0f620d
 }
+.card{
+    border-radius: 18px;
+    border: 1px solid #bab9b9;
+}
 .card p{
     color: #5b5b5b;
 }
 .card:hover{
-    transform: scale(1.05);
+    transition: .3s ease;
+    transform: scale(1.03);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 768px) {

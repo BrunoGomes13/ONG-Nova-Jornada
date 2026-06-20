@@ -1,14 +1,15 @@
-const express = require("express");
-const cors = require("cors");
-const helmet = require("helmet");
-const morgan = require("morgan");
-const tratadorErros = require("./middlewares/errorHandler");
+const express        = require("express");
+const cors           = require("cors");
+const helmet         = require("helmet");
+const morgan         = require("morgan");
+const tratadorErros  = require("./middlewares/errorHandler");
 
 /* ── Importação das rotas ── */
 const roteadorAuth    = require("./routes/authRoutes");
 const roteadorAnimais = require("./routes/animalRoutes");
 const roteadorProjetos= require("./routes/projetoRoutes");
 const roteadorRelatos = require("./routes/relatoRoutes");
+const roteadorContatos= require("./routes/contatoRoutes");
 const { roteadorUsuarios, roteadorDashboard } = require("./routes/usuarioRoutes");
 
 const aplicacao = express();
@@ -58,6 +59,7 @@ aplicacao.use("/api/auth",      roteadorAuth);
 aplicacao.use("/api/animais",   roteadorAnimais);
 aplicacao.use("/api/projetos",  roteadorProjetos);
 aplicacao.use("/api/relatos",   roteadorRelatos);
+aplicacao.use("/api/contatos",  roteadorContatos);
 aplicacao.use("/api/usuarios",  roteadorUsuarios);
 aplicacao.use("/api/dashboard", roteadorDashboard);
 

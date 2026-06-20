@@ -40,6 +40,7 @@ function Login() {
         if (data.token) {
           localStorage.setItem("token", data.token);
           localStorage.setItem("usuario", JSON.stringify(data.usuario));
+          
 
           /* ── Redireciona conforme o perfil ── */
           if (data.usuario.role === "admin") {

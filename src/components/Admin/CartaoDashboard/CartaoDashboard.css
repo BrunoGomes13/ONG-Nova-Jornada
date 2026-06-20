@@ -1,5 +1,5 @@
 /* ── Variáveis do cartão ── */
-:root {
+.layout-admin {
   --cartao-fundo: #13161f;
   --cartao-borda: rgba(255, 255, 255, 0.06);
   --cartao-raio: 16px;
