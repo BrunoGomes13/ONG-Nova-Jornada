@@ -196,4 +196,10 @@
     transform: translateX(0);
     box-shadow: 4px 0 32px rgba(0,0,0,0.5);
   }
+  .barra-lateral__logo{
+    padding-top: 50px;
+  }
+  /* .barra-lateral__link-texto{
+    font-size: 15px;
+  } */
 }

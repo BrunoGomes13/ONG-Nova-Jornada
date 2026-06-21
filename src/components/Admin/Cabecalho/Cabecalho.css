@@ -85,46 +85,6 @@
   gap: 12px;
   margin-left: auto;
 }
-
-/* ── Botão de notificações ── */
-.admin-cabecalho__botao-notificacoes {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  background: var(--cabecalho-botao-fundo);
-  border: 1px solid var(--cabecalho-borda);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 17px;
-  transition: background 0.2s ease;
-  flex-shrink: 0;
-}
-
-.admin-cabecalho__botao-notificacoes:hover {
-  background: var(--cabecalho-botao-hover);
-}
-
-.admin-cabecalho__contador-notificacoes {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  width: 16px;
-  height: 16px;
-  background: var(--cabecalho-notif-cor);
-  border-radius: 50%;
-  font-size: 9px;
-  font-weight: 700;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--fonte-principal);
-  border: 2px solid var(--cabecalho-fundo);
-}
-
 /* ── Divisor vertical ── */
 .admin-cabecalho__divisor {
   width: 1px;
@@ -144,7 +104,7 @@
 .admin-cabecalho__avatar {
   width: 38px;
   height: 38px;
-  background: var(--cabecalho-avatar-fundo);
+  background: linear-gradient(135deg, #00c6ff, #00d084);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -185,5 +145,8 @@
 
   .admin-cabecalho__info-usuario {
     display: none;
+  }
+  .admin-cabecalho__titulo-pagina{
+    padding-left: 25px;
   }
 }

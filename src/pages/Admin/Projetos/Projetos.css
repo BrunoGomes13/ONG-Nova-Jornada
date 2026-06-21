@@ -138,3 +138,52 @@
   border-radius: 10px; padding: 10px 14px;
   font-family: var(--fonte-principal); font-size: 13px;
 }
+
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVIDADE DE TABELA
+════════════════════════════════════════════════════════ */
+.pagina-projetos__tabela-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pagina-projetos__tabela {
+  min-width: 640px;
+}
+
+@media (max-width: 900px) {
+  .pagina-projetos__topo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .pagina-projetos__botao-novo {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .pagina-projetos__tabela thead th {
+    padding: 10px 14px;
+    font-size: 10px;
+  }
+  .pagina-projetos__tabela tbody td {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+  .pagina-projetos__acoes {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pagina-projetos__botao-editar,
+  .pagina-projetos__botao-deletar {
+    width: 100%;
+    text-align: center;
+  }
+  .pagina-projetos__modal {
+    max-width: 92vw;
+    padding: 20px;
+  }
+}

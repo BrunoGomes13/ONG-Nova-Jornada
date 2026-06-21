@@ -10,39 +10,66 @@ const montarCabecalhos = () => ({
   Authorization: `Bearer ${pegarToken()}`,
 });
 
+/* ── Erro customizado: marca se foi falha de REDE (servidor fora do ar)
+   ou um erro de NEGÓCIO (backend respondeu, mas com erro tipo "email já existe") ── */
+class ErroApi extends Error {
+  constructor(mensagem, ehFalhaDeRede = false) {
+    super(mensagem);
+    this.ehFalhaDeRede = ehFalhaDeRede;
+  }
+}
+
+/* ── Faz a chamada fetch tratando os dois tipos de erro separadamente ── */
+async function chamarApi(url, opcoes) {
+  let resposta;
+  try {
+    resposta = await fetch(url, opcoes);
+  } catch (erroDeRede) {
+    /* ── fetch só cai aqui se o servidor estiver inacessível de verdade
+       (backend desligado, CORS bloqueado, sem internet, etc) ── */
+    throw new ErroApi("Não foi possível conectar ao servidor. Verifique se o backend está rodando.", true);
+  }
+
+  let dados;
+  try {
+    dados = await resposta.json();
+  } catch {
+    /* ── resposta chegou mas não é JSON válido ── */
+    throw new ErroApi("O servidor respondeu de forma inesperada. Tente novamente.", true);
+  }
+
+  if (!resposta.ok) {
+    /* ── erro de negócio: o backend respondeu certinho, só que com erro ── */
+    throw new ErroApi(dados.mensagem || "Ocorreu um erro.", false);
+  }
+
+  return dados;
+}
+
 /* ══════════════════════════════════════
    AUTENTICAÇÃO
 ══════════════════════════════════════ */
 
 export const login = async (email, senha) => {
-  const resposta = await fetch(`${URL_BASE_API}/auth/login`, {
+  return chamarApi(`${URL_BASE_API}/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, senha }),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao fazer login");
-  return dados;
 };
 
 export const registrar = async (nome, email, senha) => {
-  const resposta = await fetch(`${URL_BASE_API}/auth/register`, {
+  return chamarApi(`${URL_BASE_API}/auth/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ nome, email, senha }),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao registrar");
-  return dados;
 };
 
 export const buscarMeuPerfil = async () => {
-  const resposta = await fetch(`${URL_BASE_API}/auth/me`, {
+  return chamarApi(`${URL_BASE_API}/auth/me`, {
     headers: montarCabecalhos(),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao buscar perfil");
-  return dados;
 };
 
 /* ══════════════════════════════════════
@@ -50,12 +77,9 @@ export const buscarMeuPerfil = async () => {
 ══════════════════════════════════════ */
 
 export const getDashboard = async () => {
-  const resposta = await fetch(`${URL_BASE_API}/dashboard`, {
+  return chamarApi(`${URL_BASE_API}/dashboard`, {
     headers: montarCabecalhos(),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao buscar dashboard");
-  return dados;
 };
 
 /* ══════════════════════════════════════
@@ -63,49 +87,38 @@ export const getDashboard = async () => {
 ══════════════════════════════════════ */
 
 export const getAnimais = async () => {
-  const resposta = await fetch(`${URL_BASE_API}/animais`, {
+  return chamarApi(`${URL_BASE_API}/animais`, {
     headers: montarCabecalhos(),
   });
-  return resposta.json();
 };
 
 export const getAnimalPorId = async (id) => {
-  const resposta = await fetch(`${URL_BASE_API}/animais/${id}`, {
+  return chamarApi(`${URL_BASE_API}/animais/${id}`, {
     headers: montarCabecalhos(),
   });
-  return resposta.json();
 };
 
 export const criarAnimal = async (corpo) => {
-  const resposta = await fetch(`${URL_BASE_API}/animais`, {
+  return chamarApi(`${URL_BASE_API}/animais`, {
     method: "POST",
     headers: montarCabecalhos(),
     body: JSON.stringify(corpo),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao criar animal");
-  return dados;
 };
 
 export const atualizarAnimal = async (id, corpo) => {
-  const resposta = await fetch(`${URL_BASE_API}/animais/${id}`, {
+  return chamarApi(`${URL_BASE_API}/animais/${id}`, {
     method: "PUT",
     headers: montarCabecalhos(),
     body: JSON.stringify(corpo),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao atualizar animal");
-  return dados;
 };
 
 export const deletarAnimal = async (id) => {
-  const resposta = await fetch(`${URL_BASE_API}/animais/${id}`, {
+  return chamarApi(`${URL_BASE_API}/animais/${id}`, {
     method: "DELETE",
     headers: montarCabecalhos(),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao deletar animal");
-  return dados;
 };
 
 /* ══════════════════════════════════════
@@ -113,42 +126,32 @@ export const deletarAnimal = async (id) => {
 ══════════════════════════════════════ */
 
 export const getProjetos = async () => {
-  const resposta = await fetch(`${URL_BASE_API}/projetos`, {
+  return chamarApi(`${URL_BASE_API}/projetos`, {
     headers: montarCabecalhos(),
   });
-  return resposta.json();
 };
 
 export const criarProjeto = async (corpo) => {
-  const resposta = await fetch(`${URL_BASE_API}/projetos`, {
+  return chamarApi(`${URL_BASE_API}/projetos`, {
     method: "POST",
     headers: montarCabecalhos(),
     body: JSON.stringify(corpo),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao criar projeto");
-  return dados;
 };
 
 export const atualizarProjeto = async (id, corpo) => {
-  const resposta = await fetch(`${URL_BASE_API}/projetos/${id}`, {
+  return chamarApi(`${URL_BASE_API}/projetos/${id}`, {
     method: "PUT",
     headers: montarCabecalhos(),
     body: JSON.stringify(corpo),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao atualizar projeto");
-  return dados;
 };
 
 export const deletarProjeto = async (id) => {
-  const resposta = await fetch(`${URL_BASE_API}/projetos/${id}`, {
+  return chamarApi(`${URL_BASE_API}/projetos/${id}`, {
     method: "DELETE",
     headers: montarCabecalhos(),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao deletar projeto");
-  return dados;
 };
 
 /* ══════════════════════════════════════
@@ -156,18 +159,16 @@ export const deletarProjeto = async (id) => {
 ══════════════════════════════════════ */
 
 export const getUsuarios = async () => {
-  const resposta = await fetch(`${URL_BASE_API}/usuarios`, {
+  return chamarApi(`${URL_BASE_API}/usuarios`, {
     headers: montarCabecalhos(),
   });
-  return resposta.json();
 };
 
 export const deletarUsuario = async (id) => {
-  const resposta = await fetch(`${URL_BASE_API}/usuarios/${id}`, {
+  return chamarApi(`${URL_BASE_API}/usuarios/${id}`, {
     method: "DELETE",
     headers: montarCabecalhos(),
   });
-  const dados = await resposta.json();
-  if (!resposta.ok) throw new Error(dados.mensagem || "Erro ao deletar usuário");
-  return dados;
 };
+
+export { ErroApi };

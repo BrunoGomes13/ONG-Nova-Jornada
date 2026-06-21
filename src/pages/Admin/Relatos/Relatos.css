@@ -136,3 +136,54 @@
   border-radius: 10px; padding: 10px 14px;
   font-family: 'Sora', sans-serif; font-size: 13px;
 }
+
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVIDADE DE TABELA
+════════════════════════════════════════════════════════ */
+.pagina-tabela-simples__wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pagina-tabela-simples__tabela {
+  min-width: 640px;
+}
+
+@media (max-width: 900px) {
+  .pagina-tabela-simples__topo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .pagina-tabela-simples__botao-novo {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .pagina-tabela-simples__tabela thead th {
+    padding: 10px 14px;
+    font-size: 10px;
+  }
+  .pagina-tabela-simples__tabela tbody td {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+  .pagina-tabela-simples__acoes {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pagina-tabela-simples__botao-deletar {
+    width: 100%;
+    text-align: center;
+  }
+  .pagina-relatos__modal {
+    max-width: 92vw;
+    padding: 20px;
+  }
+  .pagina-relatos__grupo-linha {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import "./Login.css";
 import Header from "../Header/Header";
@@ -13,47 +13,60 @@ function Login() {
   const [senha, setSenha]               = useState("");
   const [nome, setNome]                 = useState("");
   const [carregando, setCarregando]     = useState(false);
+  const [mensagemErro, setMensagemErro] = useState("");
 
   const navegar = useNavigate();
+  const localizacao = useLocation();
+  /* ── Página de onde o usuário veio (ex: detalhe de um animal) ── */
+  const paginaDeOrigem = localizacao.state?.de || null;
 
   /* ── Submissão do formulário ── */
   const handleSubmit = async (e) => {
     e.preventDefault(); /* ← impede recarregar a página */
+    setMensagemErro("");
     setCarregando(true);
+
+    /* ── Limpa qualquer sessão anterior antes de logar/cadastrar.
+       Evita que dados de um usuário antigo "vazem" para a nova sessão. ── */
+    localStorage.removeItem("token");
+    localStorage.removeItem("usuario");
 
     try {
       if (isCadastro) {
         /* ── CADASTRO ── */
         const data = await registrar(nome, email, senha);
 
-        if (data.token) {
-          localStorage.setItem("token", data.token);
-          localStorage.setItem("usuario", JSON.stringify(data.usuario));
-          navegar("/");
-        } else {
-          alert(data.mensagem || "Erro ao cadastrar.");
-        }
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("usuario", JSON.stringify(data.usuario));
+        /* ── Avisa o Header que o usuário mudou ── */
+        window.dispatchEvent(new Event("usuarioAtualizado"));
+        navegar(paginaDeOrigem || "/");
       } else {
         /* ── LOGIN ── */
         const data = await login(email, senha);
 
-        if (data.token) {
-          localStorage.setItem("token", data.token);
-          localStorage.setItem("usuario", JSON.stringify(data.usuario));
-          
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("usuario", JSON.stringify(data.usuario));
+        /* ── Avisa o Header que o usuário mudou ── */
+        window.dispatchEvent(new Event("usuarioAtualizado"));
 
-          /* ── Redireciona conforme o perfil ── */
-          if (data.usuario.role === "admin") {
-            navegar("/adm/dashboard"); /* ← painel admin */
-          } else {
-            navegar("/");             /* ← home normal */
-          }
+        /* ── Redireciona conforme o perfil ── */
+        if (data.usuario.role === "admin") {
+          navegar("/adm/dashboard"); /* ← painel admin */
         } else {
-          alert(data.mensagem || "Credenciais inválidas.");
+          navegar(paginaDeOrigem || "/"); /* ← home normal ou página de origem */
         }
       }
     } catch (erro) {
-      alert("Erro ao conectar com o servidor. Verifique se o backend está rodando.");
+      /* ── erro.ehFalhaDeRede vem do adminApi.js:
+         true  = backend inacessível (servidor desligado, sem internet)
+         false = backend respondeu com um erro de negócio
+                 (ex: "Este email já está cadastrado.", "Credenciais inválidas.") ── */
+      setMensagemErro(
+        erro.ehFalhaDeRede
+          ? "Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente."
+          : erro.message
+      );
       console.error(erro);
     } finally {
       setCarregando(false);
@@ -64,7 +77,6 @@ function Login() {
     <>
       <Header />
       <div className="container-login">
-        {/* ── onSubmit adicionado aqui ── */}
         <form className="form-login" onSubmit={handleSubmit}>
           <Link to="/" className="voltar">
             <span className="material-symbols-outlined">arrow_back</span>Voltar ao site
@@ -82,18 +94,33 @@ function Login() {
             <button
               type="button"
               className={!isCadastro ? "tab ativo" : "tab"}
-              onClick={() => setIsCadastro(false)}
+              onClick={() => { setIsCadastro(false); setMensagemErro(""); }}
             >
               Entrar
             </button>
             <button
               type="button"
               className={isCadastro ? "tab ativo" : "tab"}
-              onClick={() => setIsCadastro(true)}
+              onClick={() => { setIsCadastro(true); setMensagemErro(""); }}
             >
               Cadastrar
             </button>
           </div>
+
+          {/* ── Mensagem de erro inline, sem alert ── */}
+          {mensagemErro && (
+            <p style={{
+              background: "rgba(248,113,113,0.1)",
+              color: "#e53935",
+              border: "1px solid rgba(248,113,113,0.3)",
+              borderRadius: 10,
+              padding: "10px 14px",
+              fontSize: 13,
+              margin: 0,
+            }}>
+              {mensagemErro}
+            </p>
+          )}
 
           {/* ── Campo nome (só no cadastro) ── */}
           {isCadastro && (

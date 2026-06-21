@@ -1,0 +1,81 @@
+/* ════════════════════════════════════════════════════════
+   RESPONSIVIDADE DE TABELAS DO ADMIN
+   Importe este arquivo no final de cada CSS de página com tabela
+════════════════════════════════════════════════════════ */
+
+/* ── Permite rolagem horizontal em telas pequenas, sem quebrar o layout ── */
+.pagina-animais__tabela-wrapper,
+.pagina-projetos__tabela-wrapper,
+.pagina-tabela-simples__wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pagina-animais__tabela,
+.pagina-projetos__tabela,
+.pagina-tabela-simples__tabela {
+  min-width: 640px; /* impede que as colunas espremam demais */
+}
+
+/* ── Tablets e celulares grandes ── */
+@media (max-width: 900px) {
+  .pagina-animais__topo,
+  .pagina-projetos__topo,
+  .pagina-tabela-simples__topo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .pagina-animais__botao-novo,
+  .pagina-projetos__botao-novo,
+  .pagina-tabela-simples__botao-novo {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Celulares ── */
+@media (max-width: 600px) {
+  .pagina-animais__tabela thead th,
+  .pagina-projetos__tabela thead th,
+  .pagina-tabela-simples__tabela thead th {
+    padding: 10px 14px;
+    font-size: 10px;
+  }
+
+  .pagina-animais__tabela tbody td,
+  .pagina-projetos__tabela tbody td,
+  .pagina-tabela-simples__tabela tbody td {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .pagina-animais__acoes,
+  .pagina-projetos__acoes,
+  .pagina-tabela-simples__acoes {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .pagina-animais__botao-editar,
+  .pagina-animais__botao-deletar,
+  .pagina-projetos__botao-editar,
+  .pagina-projetos__botao-deletar,
+  .pagina-tabela-simples__botao-deletar {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ── Modais ocupam quase a tela toda no celular ── */
+  .pagina-animais__modal,
+  .pagina-projetos__modal,
+  .pagina-relatos__modal {
+    max-width: 92vw;
+    padding: 20px;
+  }
+
+  .pagina-animais__grupo-linha {
+    grid-template-columns: 1fr;
+  }
+}
