@@ -5,7 +5,6 @@ import Footer from "../../components/Footer/Footer";
 const URL_API = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 function Contato() {
-    /* ── Estados do formulário ── */
     const [nome, setNome]         = useState("");
     const [email, setEmail]       = useState("");
     const [mensagem, setMensagem] = useState("");
@@ -72,7 +71,6 @@ function Contato() {
                         Envie uma mensagem para nossa equipe.
                     </p>
 
-                    {/* ── Feedback de sucesso/erro ── */}
                     {feedback && (
                         <p style={{
                             padding: "12px 16px",
@@ -122,7 +120,6 @@ function Contato() {
                     </form>
                 </section>
 
-                {/* ── Botão flutuante do WhatsApp ── */}
                 <a
                     href="https://wa.me/558382247741"
                     target="_blank"
