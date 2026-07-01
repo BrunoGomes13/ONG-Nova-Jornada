@@ -1,9 +1,9 @@
 const Projeto = require("../models/Projeto");
 
-/* ══════════════════════════════════════
+/* 
    GET /api/projetos
    Lista todos os projetos (público)
-══════════════════════════════════════ */
+*/
 const listarProjetos = async (requisicao, resposta, proximo) => {
   try {
     const projetos = await Projeto.find().sort({ createdAt: -1 });
@@ -13,10 +13,10 @@ const listarProjetos = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/*
    GET /api/projetos/:id
    Busca um projeto pelo ID (público)
-══════════════════════════════════════ */
+ */
 const buscarProjetoPorId = async (requisicao, resposta, proximo) => {
   try {
     const projeto = await Projeto.findById(requisicao.params.id);

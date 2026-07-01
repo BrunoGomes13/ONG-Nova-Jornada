@@ -1,9 +1,9 @@
 const Animal = require("../models/Animal");
 
-/* ══════════════════════════════════════
+/* 
    GET /api/animais
    Lista todos os animais (público)
-══════════════════════════════════════ */
+*/
 const listarAnimais = async (requisicao, resposta, proximo) => {
   try {
     const { status, especie } = requisicao.query;
@@ -21,10 +21,10 @@ const listarAnimais = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/* 
    GET /api/animais/:id
    Busca um animal pelo ID (público)
-══════════════════════════════════════ */
+*/
 const buscarAnimalPorId = async (requisicao, resposta, proximo) => {
   try {
     const animal = await Animal.findById(requisicao.params.id);
@@ -42,10 +42,10 @@ const buscarAnimalPorId = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/* 
    POST /api/animais
    Cadastra um novo animal (admin)
-══════════════════════════════════════ */
+*/
 const criarAnimal = async (requisicao, resposta, proximo) => {
   try {
     const novoAnimal = await Animal.create(requisicao.body);
@@ -60,10 +60,10 @@ const criarAnimal = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/*
    PUT /api/animais/:id
    Atualiza um animal (admin)
-══════════════════════════════════════ */
+*/
 const atualizarAnimal = async (requisicao, resposta, proximo) => {
   try {
     const animalAtualizado = await Animal.findByIdAndUpdate(

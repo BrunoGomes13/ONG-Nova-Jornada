@@ -10,10 +10,10 @@ const gerarToken = (id, email, role) => {
   );
 };
 
-/* ══════════════════════════════════════
+/* 
    POST /api/auth/register
    Cadastra um novo usuário
-══════════════════════════════════════ */
+*/
 const registrar = async (requisicao, resposta, proximo) => {
   try {
     const { nome, email, senha, role } = requisicao.body;
@@ -49,10 +49,9 @@ const registrar = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/*
    POST /api/auth/login
-   Autentica e retorna o token JWT
-══════════════════════════════════════ */
+   Autentica e retorna o token JWT*/
 const login = async (requisicao, resposta, proximo) => {
   try {
     const { email, senha } = requisicao.body;
@@ -107,10 +106,10 @@ const login = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/* 
    GET /api/auth/me
    Retorna o usuário autenticado
-══════════════════════════════════════ */
+*/
 const buscarMeuPerfil = async (requisicao, resposta, proximo) => {
   try {
     const usuario = await Usuario.findById(requisicao.usuario._id);

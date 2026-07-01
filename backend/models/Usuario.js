@@ -30,9 +30,7 @@ const esquemaUsuario = new mongoose.Schema(
     },
   },
   {
-    /* ── Adiciona createdAt e updatedAt automaticamente ── */
     timestamps: true,
-    /* ── Nome da coleção no MongoDB Atlas ── */
     collection: "usuarios",
   }
 );

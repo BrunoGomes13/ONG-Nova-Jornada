@@ -2,10 +2,10 @@ const Usuario = require("../models/Usuario");
 const Animal  = require("../models/Animal");
 const Projeto = require("../models/Projeto");
 
-/* ══════════════════════════════════════
+/*
    GET /api/usuarios
    Lista todos os usuários (admin)
-══════════════════════════════════════ */
+*/
 const listarUsuarios = async (requisicao, resposta, proximo) => {
   try {
     const usuarios = await Usuario.find().sort({ createdAt: -1 });
@@ -15,10 +15,10 @@ const listarUsuarios = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/* 
    GET /api/usuarios/:id
    Busca usuário por ID (admin)
-══════════════════════════════════════ */
+ */
 const buscarUsuarioPorId = async (requisicao, resposta, proximo) => {
   try {
     const usuario = await Usuario.findById(requisicao.params.id);
@@ -36,10 +36,10 @@ const buscarUsuarioPorId = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/* 
    DELETE /api/usuarios/:id
    Remove um usuário (admin)
-══════════════════════════════════════ */
+ */
 const deletarUsuario = async (requisicao, resposta, proximo) => {
   try {
     /* ── Impede que o admin delete a si mesmo ── */
@@ -68,13 +68,12 @@ const deletarUsuario = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/* 
    GET /api/dashboard
    Resumo geral para o painel (admin)
-══════════════════════════════════════ */
+*/
 const buscarDashboard = async (requisicao, resposta, proximo) => {
   try {
-    /* ── Executa todas as contagens em paralelo para maior performance ── */
     const [
       totalAnimais,
       animaisDisponiveis,

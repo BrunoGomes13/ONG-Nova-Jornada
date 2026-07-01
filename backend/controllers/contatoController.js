@@ -1,11 +1,8 @@
 const Contato = require("../models/Contato");
 
-/* ══════════════════════════════════════
+/* 
    POST /api/contatos
-   Cria uma nova mensagem de contato (público)
-   Usado tanto pelo formulário de Contato quanto
-   pelo formulário de interesse em adoção.
-══════════════════════════════════════ */
+*/
 const criarContato = async (requisicao, resposta, proximo) => {
   try {
     const { nome, email, mensagem, tipo, animalNome, animalId } = requisicao.body;
@@ -29,10 +26,10 @@ const criarContato = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/* 
    GET /api/contatos
    Lista todas as mensagens (admin)
-══════════════════════════════════════ */
+*/
 const listarContatos = async (requisicao, resposta, proximo) => {
   try {
     const contatos = await Contato.find().sort({ createdAt: -1 });
@@ -42,10 +39,10 @@ const listarContatos = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/*
    PUT /api/contatos/:id/lido
    Marca uma mensagem como lida (admin)
-══════════════════════════════════════ */
+*/
 const marcarComoLido = async (requisicao, resposta, proximo) => {
   try {
     const contato = await Contato.findByIdAndUpdate(

@@ -1,9 +1,9 @@
 const Relato = require("../models/Relato");
 
-/* ══════════════════════════════════════
+/*
    GET /api/relatos
    Lista todos os relatos (público)
-══════════════════════════════════════ */
+ */
 const listarRelatos = async (requisicao, resposta, proximo) => {
   try {
     const relatos = await Relato.find().sort({ createdAt: -1 });
@@ -13,10 +13,10 @@ const listarRelatos = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/* 
    POST /api/relatos
    Cria um novo relato (admin)
-══════════════════════════════════════ */
+ */
 const criarRelato = async (requisicao, resposta, proximo) => {
   try {
     const novoRelato = await Relato.create(requisicao.body);
@@ -30,10 +30,9 @@ const criarRelato = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/*
    PUT /api/relatos/:id
-   Atualiza um relato (admin)
-══════════════════════════════════════ */
+*/
 const atualizarRelato = async (requisicao, resposta, proximo) => {
   try {
     const relatoAtualizado = await Relato.findByIdAndUpdate(
@@ -57,10 +56,10 @@ const atualizarRelato = async (requisicao, resposta, proximo) => {
   }
 };
 
-/* ══════════════════════════════════════
+/*
    DELETE /api/relatos/:id
    Remove um relato (admin)
-══════════════════════════════════════ */
+*/
 const deletarRelato = async (requisicao, resposta, proximo) => {
   try {
     const relato = await Relato.findByIdAndDelete(requisicao.params.id);
