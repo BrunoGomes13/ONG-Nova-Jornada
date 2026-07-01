@@ -85,7 +85,7 @@ function Login() {
           <div className="logo">
             <span className="material-symbols-outlined">pets</span>
             <div>
-              <span>ONG PMB</span>
+              <span>ONG Nova Jornada</span>
               <p>Proteção Animal</p>
             </div>
           </div>
